@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gym-kaigyo.jp",
   },
+  verification: {
+    google: "GnXR6wd9HdZ0cGrMj1u7Yh7QwtfOyB7VyVYVvKEYL_M",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

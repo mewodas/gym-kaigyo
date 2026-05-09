@@ -16,7 +16,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL ?? "imagen-3.0-generate-002";
+const MODEL = process.env.GEMINI_MODEL ?? "imagen-4.0-generate-001";
 
 if (!API_KEY) {
   console.error("❌ GEMINI_API_KEY が設定されていません");
