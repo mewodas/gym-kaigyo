@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllArticles, getCategoryLabel } from "@/lib/articles";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleCarousel } from "@/components/ArticleCarousel";
 
 const CATEGORIES = [
   { slug: "kaigyo", label: "開業手順", desc: "物件・工事・手続きの全ステップ", num: "01" },
@@ -18,7 +19,9 @@ const KEYWORDS = [
 ];
 
 export default function Home() {
-  const recentArticles = getAllArticles().slice(0, 4);
+  const allArticles = getAllArticles();
+  const recentArticles = allArticles.slice(0, 4);
+  const featuredArticles = allArticles.slice(0, 8);
 
   return (
     <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 20px" }}>
@@ -37,7 +40,7 @@ export default function Home() {
       }}>
         <div style={{ paddingBottom: 40 }}>
           <p style={{ color: "#FF6200", fontWeight: 700, fontSize: 13, marginBottom: 8 }}>
-            実際に開業したオーナーが書く
+            副業からスタートし、2業態を運営するオーナーが書く
           </p>
           <h1 style={{
             fontSize: "clamp(28px, 4vw, 40px)",
@@ -49,7 +52,7 @@ export default function Home() {
             パーソナルジム開業の<br />リアルをすべて公開
           </h1>
           <p style={{ fontSize: 15, color: "#333", lineHeight: 1.7, marginBottom: 24 }}>
-            「メヲダス」「delight gym」2業態を同一スペースで運営するオーナーが、
+            パーソナルジムとレンタルジムを運営するオーナーが、
             費用・器具・集客・AI活用まで実数字で解説します。
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -64,29 +67,20 @@ export default function Home() {
             }} className="hover:opacity-80 transition-opacity">
               開業完全ガイドを読む
             </Link>
-            <Link href="/contact" style={{
-              background: "#FF6200",
-              color: "#fff",
-              borderRadius: 6,
-              padding: "12px 24px",
-              fontSize: 14,
-              fontWeight: 700,
-              boxShadow: "0 4px 11px rgba(0,0,0,0.16)",
-            }} className="hover:opacity-80 transition-opacity">
-              無料相談（30分）
-            </Link>
           </div>
         </div>
+        {/* Hero image */}
         <div style={{
-          backgroundImage: "linear-gradient(135deg, #FF6200 0%, #ff8c42 100%)",
-          borderRadius: "10px 0 0 10px",
+          borderRadius: "0 0 0 10px",
+          overflow: "hidden",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: 60,
-          padding: 20,
+          alignItems: "flex-end",
         }}>
-          🏋️
+          <img
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=560&h=480&fit=crop&q=80"
+            alt="パーソナルジムのトレーニング"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
         </div>
       </section>
 
@@ -212,7 +206,15 @@ export default function Home() {
         </section>
       )}
 
-      {/* ── CTA Banner ── */}
+      {/* ── 深掘りコラム（横スクロール） ── */}
+      {featuredArticles.length > 0 && (
+        <ArticleCarousel
+          title="【深掘り】開業オーナーが解説する実践コラム"
+          articles={featuredArticles}
+        />
+      )}
+
+      {/* ── AI活用バナー ── */}
       <section style={{
         border: "4px solid #FF6200",
         borderRadius: 20,
@@ -221,23 +223,19 @@ export default function Home() {
         padding: "40px 32px",
         textAlign: "center",
       }}>
-        <h2 style={{ fontWeight: 900, fontSize: 24, color: "#FF6200", marginBottom: 12 }}>
-          開業前の不安、一緒に解消しましょう
+        <h2 style={{ fontWeight: 900, fontSize: 22, color: "#FF6200", marginBottom: 12 }}>
+          🤖 AIを使った経営効率化に興味がありますか？
         </h2>
-        <p style={{ fontSize: 15, color: "#333", lineHeight: 1.7, marginBottom: 24 }}>
-          物件選定・資金計画・集客設計まで、実際の開業経験をもとに30分でお答えします。
+        <p style={{ fontSize: 15, color: "#333", lineHeight: 1.7, marginBottom: 8 }}>
+          Claudeを活用した業務自動化・集客・コンテンツ制作の実例を「AI活用経営」カテゴリで公開中です。
         </p>
-        <Link href="/contact" style={{
-          background: "#6FBA2C",
-          color: "#fff",
-          borderRadius: 6,
-          padding: "14px 36px",
-          fontSize: 16,
+        <Link href="/ai-keiei" style={{
+          color: "#006EBD",
+          fontSize: 14,
           fontWeight: 700,
-          boxShadow: "0 4px 10px rgba(0,0,0,0.16)",
-          display: "inline-block",
-        }} className="hover:opacity-80 transition-opacity">
-          無料相談（30分）を申し込む →
+          textDecoration: "underline",
+        }} className="hover:opacity-70 transition-opacity">
+          AI活用経営の記事を読む →
         </Link>
       </section>
 

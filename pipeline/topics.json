@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-05-09",
+  "config": {
+    "targetCharCount": 3000,
+    "minCharCount": 2500,
+    "maxCharCount": 4000,
+    "voice": "実際にパーソナルジムを開業・運営するオーナー視点",
+    "tone": "実体験ベース・具体的な数字を入れる・押し売り回避",
+    "mustInclude": [
+      "実数値・体験談",
+      "失敗例 or 注意点",
+      "まとめセクション"
+    ]
+  },
+  "queue": [
+    {
+      "category": "kaigyo",
+      "slug": "open-checklist",
+      "title": "パーソナルジム開業前のチェックリスト30項目",
+      "description": "オープン日までに必ずやるべき30項目を、時系列で整理した完全チェックリスト。漏れなく開業準備を進めるためのガイドです。",
+      "keywords": [
+        "開業準備",
+        "チェックリスト",
+        "オープン準備"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kaigyo",
+      "slug": "concept-design",
+      "title": "ジムのコンセプト作り｜差別化を生む3つの軸",
+      "description": "競合の多いパーソナルジム業界で生き残るためのコンセプト設計。ターゲット・サービス・価格の3軸で独自ポジションを作る方法を解説します。",
+      "keywords": [
+        "コンセプト",
+        "差別化",
+        "ポジショニング"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kaigyo",
+      "slug": "kyoso-bunseki",
+      "title": "競合調査の進め方｜開業前にやるべき分析テンプレ",
+      "description": "開業前の競合リサーチを体系化。立地・価格・サービスを整理し、自店の強みを設計する方法を解説します。",
+      "keywords": [
+        "競合調査",
+        "市場分析",
+        "ポジショニング"
+      ],
+      "status": "pending"
+    },
+    {
+      "category": "kaigyo",
+      "slug": "first-month",
+      "title": "開業1ヶ月目にやるべきこと10選",
+      "description": "開業初月で確実にやっておくべきタスクを、優先順位付きで解説。集客・運営・改善のすべてをカバーします。",
+      "keywords": [
+        "開業初月",
+        "オープン後",
+        "立ち上げ"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kaigyo",
+      "slug": "kaigyo-todoke",
+      "title": "個人事業主の開業届と税務署手続き完全ガイド",
+      "description": "ジム開業時に必要な開業届・青色申告承認申請書の書き方と提出方法を、初めてでも迷わない手順で解説します。",
+      "keywords": [
+        "開業届",
+        "個人事業主",
+        "税務署"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "hiyou",
+      "slug": "hojokin",
+      "title": "小規模事業者持続化補助金の使い方｜ジム開業向け申請ガイド",
+      "description": "ジム開業時に活用できる小規模事業者持続化補助金の申請方法と、採択されやすい計画書の書き方を解説します。",
+      "keywords": [
+        "補助金",
+        "持続化補助金",
+        "資金調達"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "hiyou",
+      "slug": "joseikin-ichiran",
+      "title": "ジム開業で使える助成金・補助金一覧",
+      "description": "創業時に活用できる国・自治体の助成金・補助金を網羅。申請条件・上限額・採択率を比較表でわかりやすく整理します。",
+      "keywords": [
+        "助成金",
+        "補助金",
+        "創業支援"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "hiyou",
+      "slug": "kaikei-keiri",
+      "title": "ジム経営の経理・会計｜freeeで月1時間に圧縮する方法",
+      "description": "個人事業主のジム経営における経理・会計業務をクラウド会計freeeで自動化。月1時間で済ませる具体的な運用フローを解説します。",
+      "keywords": [
+        "経理",
+        "会計",
+        "freee",
+        "確定申告"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "hiyou",
+      "slug": "invoice-seido",
+      "title": "インボイス制度とパーソナルジム経営｜登録すべきか",
+      "description": "インボイス制度がパーソナルジム経営にどう影響するか、登録すべきかどうかを実例で解説します。",
+      "keywords": [
+        "インボイス",
+        "適格請求書",
+        "消費税"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "hiyou",
+      "slug": "shikinguri",
+      "title": "ジム経営の資金繰り表の作り方｜開業初年度版テンプレ",
+      "description": "開業1年目の資金繰り表を、収入・支出を時系列で管理する方法を、テンプレ付きで解説します。",
+      "keywords": [
+        "資金繰り",
+        "キャッシュフロー",
+        "経営管理"
+      ],
+      "status": "pending"
+    },
+    {
+      "category": "kigu",
+      "slug": "power-rack",
+      "title": "パーソナルジムのパワーラック選び｜失敗しない3つのポイント",
+      "description": "ジムの中核機材パワーラックの選び方を、サイズ・耐荷重・付属機能の3軸で解説。中古・新品の判断基準もカバーします。",
+      "keywords": [
+        "パワーラック",
+        "器具選び",
+        "メーカー"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kigu",
+      "slug": "dumbbell-erabi",
+      "title": "ダンベル選定完全ガイド｜固定式vs可変式どちらが正解",
+      "description": "パーソナルジムのダンベル選びを、固定式・可変式・ラックの3観点で比較解説。コスパと使い勝手のベストバランスを提案します。",
+      "keywords": [
+        "ダンベル",
+        "可変式",
+        "器具選び"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kigu",
+      "slug": "yusanso-machine",
+      "title": "有酸素マシンは必要か｜パーソナルジムの優先度判断",
+      "description": "トレッドミル・バイクなどの有酸素マシンをパーソナルジムに置くべきかを、坪数・客層・予算別に解説します。",
+      "keywords": [
+        "有酸素マシン",
+        "トレッドミル",
+        "器具選定"
+      ],
+      "status": "pending"
+    },
+    {
+      "category": "kigu",
+      "slug": "kagami-yukazai",
+      "title": "ジムの鏡・床材選び｜失敗例から学ぶ最適解",
+      "description": "ジム空間の印象を決める鏡と床材の選び方。費用・耐久性・印象の3軸で最適な選択を実例で解説します。",
+      "keywords": [
+        "鏡",
+        "床材",
+        "内装"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "kigu",
+      "slug": "kigu-haichi",
+      "title": "限られたスペースで最大効率の器具配置術",
+      "description": "10〜20坪のパーソナルジムで器具を効率配置するレイアウト術を、図解とともに解説します。",
+      "keywords": [
+        "レイアウト",
+        "器具配置",
+        "スペース"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "shukaku",
+      "slug": "line-koushiki",
+      "title": "LINE公式アカウント完全活用｜ジム集客のクロージング",
+      "description": "ジム集客でLINE公式アカウントを活用する具体的な手順と、リッチメニュー・ステップ配信の設計方法を解説します。",
+      "keywords": [
+        "LINE公式",
+        "リッチメニュー",
+        "ステップ配信"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "shukaku",
+      "slug": "homepage-hissu",
+      "title": "ジムのホームページに必須の10要素",
+      "description": "新規問い合わせを増やすジムのホームページに必須の要素を、コンバージョン視点で解説します。",
+      "keywords": [
+        "ホームページ",
+        "ランディングページ",
+        "Webサイト"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "shukaku",
+      "slug": "seo-kiso",
+      "title": "ジム向けSEO対策の基礎｜ローカル検索で1位を取る",
+      "description": "「地域名＋パーソナルジム」で1位を取るためのSEO対策の基礎を、初心者向けに解説します。",
+      "keywords": [
+        "SEO",
+        "ローカル検索",
+        "コンテンツマーケ"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "shukaku",
+      "slug": "taiken-sekkei",
+      "title": "体験トレーニングの設計｜入会率を50%超にする方法",
+      "description": "体験トレーニングの構成・流れ・クロージングを、入会率を上げる視点で設計する方法を実例で解説します。",
+      "keywords": [
+        "体験トレーニング",
+        "クロージング",
+        "入会率"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "shukaku",
+      "slug": "retention",
+      "title": "リテンションを上げる仕組み｜継続率90%超の運営術",
+      "description": "顧客の継続率を90%以上に保つための具体的な施策を、コミュニケーション・成果可視化・コミュニティ作りの3軸で解説します。",
+      "keywords": [
+        "リテンション",
+        "継続率",
+        "顧客満足"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "chatgpt-vs-claude",
+      "title": "ChatGPTとClaudeの使い分け｜ジム経営での実例",
+      "description": "AI業務自動化におけるChatGPTとClaudeの違いと、ジム経営での使い分け例を実用ベースで解説します。",
+      "keywords": [
+        "ChatGPT",
+        "Claude",
+        "AI比較"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "sns-jidouka",
+      "title": "SNS投稿をAIで自動化｜月10分で2週間分を生成",
+      "description": "Claudeを使ってInstagram・X等のSNS投稿を月1セッションで2週間分まとめて生成するワークフローを公開します。",
+      "keywords": [
+        "SNS自動化",
+        "投稿生成",
+        "AI活用"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "ai-lp",
+      "title": "AIで顧客向けLPを作る方法｜デザイン経験ゼロでも可能",
+      "description": "Claudeとノーコードツールを組み合わせて、デザイン未経験でも数時間でLPを作る方法を解説します。",
+      "keywords": [
+        "LP",
+        "ランディングページ",
+        "AIデザイン"
+      ],
+      "status": "pending"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "ai-keiei-handan",
+      "title": "経営判断にAIを活かす｜数字をAIに渡して意思決定する",
+      "description": "売上・客数・継続率などの経営数字をAIに渡して、改善案・予測を出させる実践プロンプトを公開します。",
+      "keywords": [
+        "AI経営判断",
+        "データ分析",
+        "Claude活用"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "video-script",
+      "title": "リール動画の台本をAIで量産する方法",
+      "description": "Instagramリール・TikTok向けの30秒動画台本をAIで量産する具体的なプロンプトと運用フローを解説します。",
+      "keywords": [
+        "リール",
+        "動画台本",
+        "AI活用"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "ai-keiei",
+      "slug": "prompt-engineering",
+      "title": "ジム経営者のためのプロンプト設計入門",
+      "description": "AIから良い回答を引き出すプロンプトの作り方を、ジム経営の実例で解説します。",
+      "keywords": [
+        "プロンプト",
+        "プロンプトエンジニアリング",
+        "AI活用"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "fukugyou",
+      "slug": "kakuteishinkoku",
+      "title": "副業トレーナーの確定申告｜20万円超でやるべきこと",
+      "description": "副業収入が年20万円を超えた場合の確定申告の手順を、freeeを使った具体的な進め方とともに解説します。",
+      "keywords": [
+        "確定申告",
+        "副業",
+        "税金"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "fukugyou",
+      "slug": "shikaku-erabi",
+      "title": "副業トレーナーが取るべき資格｜NSCA・NESTAを比較",
+      "description": "副業でパーソナルトレーナーを始める際に取るべき資格を、費用・取得期間・権威性の3軸で比較解説します。",
+      "keywords": [
+        "NSCA",
+        "NESTA",
+        "トレーナー資格"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "fukugyou",
+      "slug": "weekend-kasodou",
+      "title": "週末・夜間で月10万円｜副業トレーナーの効率的な稼働",
+      "description": "本業を持つ副業トレーナーが週末・夜間だけで月10万円を稼ぐためのスケジュール管理を実例で解説します。",
+      "keywords": [
+        "副業",
+        "週末稼働",
+        "時間管理"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "fukugyou",
+      "slug": "dokuritsu-junbi",
+      "title": "副業から独立への準備｜判断基準とロードマップ",
+      "description": "副業トレーナーが本業を辞めて独立するタイミングと、その前に準備すべきことをチェックリスト形式で解説します。",
+      "keywords": [
+        "独立",
+        "脱サラ",
+        "副業卒業"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "fukugyou",
+      "slug": "fukugyou-shukaku",
+      "title": "副業期の集客のリアル｜0→10人までの軌跡",
+      "description": "副業トレーナーの集客0→10人までを実体験ベースで解説。SNS・紹介・体験会の使い分けを具体的に紹介します。",
+      "keywords": [
+        "副業集客",
+        "新規獲得",
+        "0→1"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "gyomu",
+      "slug": "kokyaku-kanri",
+      "title": "ジムの顧客管理ツール比較｜小規模ジム向けベスト5",
+      "description": "個人〜中小規模パーソナルジム向けの顧客管理ツールを比較。コスト・機能・使いやすさで選ぶ基準を解説します。",
+      "keywords": [
+        "顧客管理",
+        "CRM",
+        "ツール選び"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "gyomu",
+      "slug": "kessai-system",
+      "title": "ジム向け決済システムの選び方｜Square・Stripe・PayPal比較",
+      "description": "ジムで使える決済システムを手数料・使いやすさ・サブスク対応で比較。最適な選択肢を解説します。",
+      "keywords": [
+        "決済",
+        "Square",
+        "Stripe",
+        "サブスク"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "gyomu",
+      "slug": "seisou-maintenance",
+      "title": "ジムの清掃・メンテナンス｜衛生管理と器具寿命の両立",
+      "description": "パーソナルジムの清掃ルーチン・器具メンテナンスを、衛生管理と器具寿命の観点で具体化します。",
+      "keywords": [
+        "清掃",
+        "メンテナンス",
+        "衛生管理"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "gyomu",
+      "slug": "trainer-saiyou",
+      "title": "トレーナー採用の進め方｜業務委託で始める方法",
+      "description": "個人ジムが初めてトレーナーを採用する時の業務委託契約・採用基準・面談の進め方を実体験で解説します。",
+      "keywords": [
+        "採用",
+        "業務委託",
+        "トレーナー"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "gyomu",
+      "slug": "risk-kanri",
+      "title": "ジムのリスク管理｜怪我・クレーム・トラブル対応",
+      "description": "ジム経営で起こりうる怪我・クレーム・トラブルを未然に防ぐリスク管理体制の作り方を解説します。",
+      "keywords": [
+        "リスク管理",
+        "クレーム",
+        "怪我対応"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "horitsu",
+      "slug": "baisyo-hoken",
+      "title": "ジム経営に必須の賠償責任保険｜選び方と費用",
+      "description": "パーソナルジム経営者が必ず加入すべき賠償責任保険の選び方、費用相場、補償内容を比較解説します。",
+      "keywords": [
+        "賠償責任保険",
+        "保険",
+        "リスク管理"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "horitsu",
+      "slug": "kenkou-zoushinhou",
+      "title": "ジム経営者が知るべき健康増進法・特商法",
+      "description": "パーソナルジム経営に関わる健康増進法・特定商取引法の重要なポイントをわかりやすく解説します。",
+      "keywords": [
+        "健康増進法",
+        "特商法",
+        "法律"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "horitsu",
+      "slug": "yakkihou-hyoji",
+      "title": "薬機法・景品表示法で気をつける広告表現",
+      "description": "ダイエット・ボディメイクの広告で違反しがちな薬機法・景品表示法のNG表現を実例で解説します。",
+      "keywords": [
+        "薬機法",
+        "景品表示法",
+        "広告"
+      ],
+      "status": "published"
+    },
+    {
+      "category": "horitsu",
+      "slug": "kaisya-koujin",
+      "title": "個人事業主と法人化｜ジム経営はどちらが有利か",
+      "description": "ジム経営における個人事業主と法人の違い、法人化のタイミング、税制比較を解説します。",
+      "keywords": [
+        "法人化",
+        "個人事業主",
+        "税制"
+      ],
+      "status": "pending"
+    }
+  ]
+}

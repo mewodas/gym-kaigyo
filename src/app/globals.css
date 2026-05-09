@@ -22,3 +22,11 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

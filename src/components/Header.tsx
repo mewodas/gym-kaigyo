@@ -51,7 +51,7 @@ export function Header() {
           }}
           className="hover:opacity-80 transition-opacity"
         >
-          無料相談
+          AI活用の相談をする
         </Link>
       </div>
     </header>
