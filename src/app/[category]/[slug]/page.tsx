@@ -14,10 +14,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, slug } = await params;
   const article = getArticle(category, slug);
   if (!article) return {};
+  const url = `https://gym-kaigyo.jp/${category}/${slug}`;
   return {
     title: article.title,
     description: article.description,
-    openGraph: { title: article.title, description: article.description },
+    alternates: { canonical: url },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url,
+      type: "article",
+      publishedTime: article.date,
+      tags: article.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+    },
   };
 }
 
