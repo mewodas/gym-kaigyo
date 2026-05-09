@@ -2,23 +2,23 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --color-primary: #0052ff;
-  --color-primary-active: #003ecc;
-  --color-canvas: #ffffff;
-  --color-surface-soft: #f7f7f7;
-  --color-surface-strong: #eef0f3;
-  --color-surface-dark: #0a0b0d;
-  --color-surface-dark-elevated: #16181c;
-  --color-ink: #0a0b0d;
-  --color-body: #5b616e;
-  --color-muted: #7c828a;
-  --color-hairline: #dee1e6;
-  --color-on-dark: #ffffff;
-  --color-on-dark-soft: #a8acb3;
+  --main: #FF6200;
+  --sub: #FEF6EA;
+  --btn-green: #6FBA2C;
+  --link: #006EBD;
+  --body-text: #333333;
+  --muted: #666666;
+  --border: #DEDEDE;
+  --canvas: #ffffff;
+  --footer-dark: #333333;
 }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background-color: #ffffff;
+  background-image:
+    repeating-linear-gradient(90deg, #F7F7F7, #F7F7F7 1px, transparent 1px, transparent 14px),
+    repeating-linear-gradient(0deg, #F7F7F7, #F7F7F7 1px, #fff 1px, #fff 14px);
+  color: var(--body-text);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }

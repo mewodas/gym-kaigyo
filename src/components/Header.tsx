@@ -11,25 +11,27 @@ const NAV_ITEMS = [
 
 export function Header() {
   return (
-    <header
-      style={{ borderBottom: "1px solid var(--color-hairline)", background: "var(--color-canvas)" }}
-      className="sticky top-0 z-50"
-    >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: 18, letterSpacing: "-0.3px" }}
-        >
-          ジム開業ラボ
+    <header style={{
+      background: "#fff",
+      borderBottom: "3px solid #FF6200",
+      boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
+      position: "sticky",
+      top: 0,
+      zIndex: 50,
+    }}>
+      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+        <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+          <span style={{ color: "#FF6200", fontSize: 11, fontWeight: 700 }}>パーソナルジム開業マニュアル</span>
+          <span style={{ color: "#333", fontSize: 20, fontWeight: 900, letterSpacing: "-0.5px" }}>ジム開業ラボ</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              style={{ color: "var(--color-ink)", fontSize: 14, fontWeight: 500 }}
-              className="hover:opacity-70 transition-opacity"
+              style={{ color: "#006EBD", fontSize: 14, fontWeight: 500 }}
+              className="hover:opacity-60 transition-opacity"
             >
               {item.label}
             </Link>
@@ -39,15 +41,15 @@ export function Header() {
         <Link
           href="/contact"
           style={{
-            background: "var(--color-primary)",
+            background: "#FF6200",
             color: "#fff",
-            borderRadius: 100,
-            padding: "10px 20px",
-            fontSize: 14,
-            fontWeight: 600,
-            lineHeight: 1.15,
+            borderRadius: 6,
+            padding: "8px 18px",
+            fontSize: 13,
+            fontWeight: 700,
+            boxShadow: "0 4px 11px rgba(0,0,0,0.16)",
           }}
-          className="hover:opacity-90 transition-opacity"
+          className="hover:opacity-80 transition-opacity"
         >
           無料相談
         </Link>

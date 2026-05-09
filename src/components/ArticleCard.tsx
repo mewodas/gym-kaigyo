@@ -6,52 +6,46 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
     <Link
       href={`/${article.category}/${article.slug}`}
       style={{
-        background: "var(--color-canvas)",
-        border: "1px solid var(--color-hairline)",
-        borderRadius: 24,
-        padding: 32,
+        background: "#fff",
+        border: "3px solid #FF6200",
+        borderRadius: 10,
+        padding: "20px 20px 24px",
         display: "block",
-        transition: "box-shadow 0.15s",
+        boxShadow: "3px 4px 0 0 #FF6200",
+        transition: "opacity 0.2s",
       }}
-      className="hover:shadow-md"
+      className="hover:opacity-80"
     >
-      <span
-        style={{
-          background: "var(--color-surface-strong)",
-          color: "var(--color-ink)",
-          fontSize: 12,
-          fontWeight: 600,
-          borderRadius: 100,
-          padding: "4px 12px",
-          display: "inline-block",
-        }}
-      >
+      <span style={{
+        background: "#FF6200",
+        color: "#fff",
+        fontSize: 12,
+        fontWeight: 700,
+        borderRadius: 4,
+        padding: "2px 8px",
+        display: "inline-block",
+        marginBottom: 10,
+      }}>
         {getCategoryLabel(article.category)}
       </span>
-      <h2
-        style={{
-          marginTop: 12,
-          fontWeight: 600,
-          fontSize: 16,
-          color: "var(--color-ink)",
-          lineHeight: 1.4,
-          letterSpacing: "-0.2px",
-        }}
-      >
+      <h2 style={{
+        fontWeight: 700,
+        fontSize: 15,
+        color: "#333",
+        lineHeight: 1.5,
+        marginBottom: 8,
+      }}>
         {article.title}
       </h2>
-      <p
-        style={{
-          marginTop: 8,
-          fontSize: 14,
-          color: "var(--color-body)",
-          lineHeight: 1.6,
-          display: "-webkit-box",
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-        }}
-      >
+      <p style={{
+        fontSize: 13,
+        color: "#666",
+        lineHeight: 1.7,
+        display: "-webkit-box",
+        WebkitLineClamp: 2,
+        WebkitBoxOrient: "vertical",
+        overflow: "hidden",
+      }}>
         {article.description}
       </p>
     </Link>
