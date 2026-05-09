@@ -11,21 +11,43 @@ const NAV_ITEMS = [
 
 export function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
-      <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="font-bold text-lg text-gray-900 tracking-tight">
+    <header
+      style={{ borderBottom: "1px solid var(--color-hairline)", background: "var(--color-canvas)" }}
+      className="sticky top-0 z-50"
+    >
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link
+          href="/"
+          style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: 18, letterSpacing: "-0.3px" }}
+        >
           ジム開業ラボ
         </Link>
-        <nav className="hidden md:flex gap-5 text-sm text-gray-600">
+
+        <nav className="hidden md:flex items-center gap-6">
           {NAV_ITEMS.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-gray-900 transition-colors">
+            <Link
+              key={item.href}
+              href={item.href}
+              style={{ color: "var(--color-ink)", fontSize: 14, fontWeight: 500 }}
+              className="hover:opacity-70 transition-opacity"
+            >
               {item.label}
             </Link>
           ))}
         </nav>
+
         <Link
           href="/contact"
-          className="text-sm bg-gray-900 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors"
+          style={{
+            background: "var(--color-primary)",
+            color: "#fff",
+            borderRadius: 100,
+            padding: "10px 20px",
+            fontSize: 14,
+            fontWeight: 600,
+            lineHeight: 1.15,
+          }}
+          className="hover:opacity-90 transition-opacity"
         >
           無料相談
         </Link>

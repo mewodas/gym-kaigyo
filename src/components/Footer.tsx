@@ -1,27 +1,46 @@
 import Link from "next/link";
 
+const LINKS = [
+  { label: "開業手順", href: "/kaigyo" },
+  { label: "費用・資金", href: "/hiyou" },
+  { label: "器具・設備", href: "/kigu" },
+  { label: "集客", href: "/shukaku" },
+  { label: "AI活用経営", href: "/ai-keiei" },
+  { label: "副業トレーナー", href: "/fukugyou" },
+  { label: "著者プロフィール", href: "/profile" },
+  { label: "お問い合わせ", href: "/contact" },
+];
+
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-gray-50 mt-20">
-      <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-6 text-sm text-gray-500">
-        <div>
-          <p className="font-bold text-gray-900 mb-1">ジム開業ラボ</p>
-          <p>実際に開業したオーナーが書くリアルな開業マニュアル</p>
+    <footer style={{ background: "var(--color-canvas)", borderTop: "1px solid var(--color-hairline)" }}>
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div>
+            <p style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>
+              ジム開業ラボ
+            </p>
+            <p style={{ color: "var(--color-body)", fontSize: 14, maxWidth: 260, lineHeight: 1.6 }}>
+              実際に開業したオーナーが書く、リアルな開業マニュアル。
+            </p>
+          </div>
+          <nav className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-3">
+            {LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ color: "var(--color-body)", fontSize: 14 }}
+                className="hover:opacity-70 transition-opacity"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <nav className="flex flex-col gap-1">
-          <Link href="/kaigyo" className="hover:text-gray-900">開業手順</Link>
-          <Link href="/hiyou" className="hover:text-gray-900">費用・資金</Link>
-          <Link href="/kigu" className="hover:text-gray-900">器具・設備</Link>
-          <Link href="/shukaku" className="hover:text-gray-900">集客</Link>
-          <Link href="/ai-keiei" className="hover:text-gray-900">AI活用経営</Link>
-          <Link href="/fukugyou" className="hover:text-gray-900">副業トレーナー</Link>
-        </nav>
-        <nav className="flex flex-col gap-1">
-          <Link href="/profile" className="hover:text-gray-900">著者プロフィール</Link>
-          <Link href="/contact" className="hover:text-gray-900">お問い合わせ・無料相談</Link>
-        </nav>
+        <div style={{ borderTop: "1px solid var(--color-hairline)", marginTop: 48, paddingTop: 24 }}>
+          <p style={{ color: "var(--color-muted)", fontSize: 12 }}>© 2026 ジム開業ラボ</p>
+        </div>
       </div>
-      <p className="text-center text-xs text-gray-400 pb-6">© 2026 ジム開業ラボ</p>
     </footer>
   );
 }
