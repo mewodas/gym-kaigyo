@@ -43,6 +43,22 @@ export function getArticlesByCategory(category: string): ArticleMeta[] {
   return getAllArticles().filter((a) => a.category === category);
 }
 
+export function getRelatedArticles(
+  category: string,
+  slug: string,
+  limit = 3
+): ArticleMeta[] {
+  const sameCategory = getAllArticles().filter(
+    (a) => a.category === category && a.slug !== slug
+  );
+  if (sameCategory.length >= limit) return sameCategory.slice(0, limit);
+
+  const others = getAllArticles().filter(
+    (a) => a.category !== category
+  );
+  return [...sameCategory, ...others].slice(0, limit);
+}
+
 export function getArticle(category: string, slug: string): Article | null {
   const extensions = [".mdx", ".md"];
   for (const ext of extensions) {

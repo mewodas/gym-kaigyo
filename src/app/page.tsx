@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllArticles, getCategoryLabel } from "@/lib/articles";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleCarousel } from "@/components/ArticleCarousel";
+import { buildWebsiteJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 
 const CATEGORIES = [
   { slug: "kaigyo", label: "開業手順", desc: "物件・工事・手続きの全ステップ", num: "01" },
@@ -23,8 +24,19 @@ export default function Home() {
   const recentArticles = allArticles.slice(0, 4);
   const featuredArticles = allArticles.slice(0, 8);
 
+  const websiteJsonLd = buildWebsiteJsonLd();
+  const orgJsonLd = buildOrganizationJsonLd();
+
   return (
     <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 20px" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
 
       {/* ── Hero ── */}
       <section style={{

@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
-import { getArticle, getAllSlugs, getCategoryLabel } from "@/lib/articles";
+import { getArticle, getAllSlugs, getCategoryLabel, getRelatedArticles } from "@/lib/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { calculateReadingTime } from "@/lib/reading-time";
+import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/structured-data";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 type Props = { params: Promise<{ category: string; slug: string }> };
 
@@ -40,26 +43,41 @@ export default async function ArticlePage({ params }: Props) {
   const article = getArticle(category, slug);
   if (!article) notFound();
 
+  const readingTime = calculateReadingTime(article.content);
+  const relatedArticles = getRelatedArticles(category, slug, 3);
+  const articleJsonLd = buildArticleJsonLd(article);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(article);
+
   return (
     <>
+      {/* JSON-LD: Article + Breadcrumb */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* Breadcrumb + Title */}
-      <div style={{ background: "var(--color-canvas)", borderBottom: "1px solid var(--color-hairline)", padding: "32px 0" }}>
+      <div style={{ background: "#fff", borderBottom: "1px solid #DEDEDE", padding: "32px 0" }}>
         <div className="max-w-3xl mx-auto px-6">
-          <nav style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 20 }}>
-            <Link href="/" style={{ color: "var(--color-muted)", fontSize: 13 }} className="hover:opacity-70">ホーム</Link>
-            <span style={{ color: "var(--color-muted)", fontSize: 13 }}>/</span>
-            <Link href={`/${article.category}`} style={{ color: "var(--color-muted)", fontSize: 13 }} className="hover:opacity-70">
+          <nav style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 20, flexWrap: "wrap" }}>
+            <Link href="/" style={{ color: "#666", fontSize: 13 }} className="hover:opacity-70">ホーム</Link>
+            <span style={{ color: "#666", fontSize: 13 }}>/</span>
+            <Link href={`/${article.category}`} style={{ color: "#666", fontSize: 13 }} className="hover:opacity-70">
               {getCategoryLabel(article.category)}
             </Link>
           </nav>
           <span
             style={{
-              background: "var(--color-surface-strong)",
-              color: "var(--color-ink)",
+              background: "#FF6200",
+              color: "#fff",
               fontSize: 12,
-              fontWeight: 600,
-              borderRadius: 100,
-              padding: "4px 12px",
+              fontWeight: 700,
+              borderRadius: 4,
+              padding: "3px 10px",
               display: "inline-block",
               marginBottom: 16,
             }}
@@ -68,23 +86,24 @@ export default async function ArticlePage({ params }: Props) {
           </span>
           <h1
             style={{
-              fontSize: "clamp(24px, 4vw, 40px)",
-              fontWeight: 400,
-              color: "var(--color-ink)",
-              lineHeight: 1.15,
-              letterSpacing: "-0.8px",
+              fontSize: "clamp(24px, 4vw, 36px)",
+              fontWeight: 900,
+              color: "#333",
+              lineHeight: 1.3,
+              letterSpacing: "-0.5px",
             }}
           >
             {article.title}
           </h1>
-          {article.date && (
-            <p style={{ color: "var(--color-muted)", fontSize: 13, marginTop: 12 }}>{article.date}</p>
-          )}
+          <div style={{ display: "flex", gap: 16, alignItems: "center", marginTop: 16, color: "#666", fontSize: 13 }}>
+            {article.date && <span>📅 {article.date}</span>}
+            <span>⏱ 読了 約{readingTime}分</span>
+          </div>
         </div>
       </div>
 
       {/* Article Body */}
-      <div style={{ background: "var(--color-canvas)", padding: "64px 0" }}>
+      <div style={{ background: "#fff", padding: "48px 0 64px" }}>
         <div className="max-w-3xl mx-auto px-6">
           <article className="prose prose-gray max-w-none">
             <MDXRemote source={article.content} />
@@ -92,39 +111,33 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Dark CTA Band */}
-      <section style={{ background: "var(--color-surface-dark)", padding: "96px 0" }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2
-            style={{
-              fontSize: 32,
-              fontWeight: 400,
-              color: "var(--color-on-dark)",
-              letterSpacing: "-0.5px",
-              marginBottom: 16,
-            }}
-          >
-            開業前に相談したい方へ
-          </h2>
-          <p style={{ fontSize: 15, color: "var(--color-on-dark-soft)", lineHeight: 1.6, marginBottom: 32 }}>
-            物件選定・資金計画・集客設計まで、実体験をもとに伴走します。
-          </p>
-          <Link
-            href="/contact"
-            style={{
-              background: "var(--color-primary)",
-              color: "#fff",
-              borderRadius: 100,
-              padding: "14px 28px",
-              fontSize: 15,
-              fontWeight: 600,
-              display: "inline-block",
-            }}
-            className="hover:opacity-90 transition-opacity"
-          >
-            無料相談（30分）を申し込む
-          </Link>
-        </div>
+      {/* Related Articles */}
+      <RelatedArticles articles={relatedArticles} />
+
+      {/* AI活用バナー */}
+      <section style={{
+        border: "4px solid #FF6200",
+        borderRadius: 20,
+        background: "#FEF6EA",
+        margin: "60px auto",
+        maxWidth: 800,
+        padding: "40px 32px",
+        textAlign: "center",
+      }} className="mx-6 sm:mx-auto">
+        <h2 style={{ fontWeight: 900, fontSize: 22, color: "#FF6200", marginBottom: 12 }}>
+          🤖 AIを使った経営効率化に興味がありますか？
+        </h2>
+        <p style={{ fontSize: 15, color: "#333", lineHeight: 1.7, marginBottom: 8 }}>
+          Claudeを活用した業務自動化・集客・コンテンツ制作の実例を「AI活用経営」カテゴリで公開中です。
+        </p>
+        <Link href="/ai-keiei" style={{
+          color: "#006EBD",
+          fontSize: 14,
+          fontWeight: 700,
+          textDecoration: "underline",
+        }} className="hover:opacity-70 transition-opacity">
+          AI活用経営の記事を読む →
+        </Link>
       </section>
     </>
   );
