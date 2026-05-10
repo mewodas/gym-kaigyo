@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const COLS = [
   {
-    heading: "Categories",
-    headingJp: "カテゴリ",
+    heading: "カテゴリ",
     links: [
       { label: "開業手順", href: "/kaigyo" },
       { label: "費用・資金", href: "/hiyou" },
@@ -14,8 +13,7 @@ const COLS = [
     ],
   },
   {
-    heading: "About",
-    headingJp: "サイトについて",
+    heading: "サイトについて",
     links: [
       { label: "著者プロフィール", href: "/profile" },
       { label: "お問い合わせ", href: "/contact" },
@@ -30,66 +28,49 @@ export function FooterV2() {
       borderTop: "1px solid rgba(255,255,255,0.08)",
       color: "#fff",
     }}>
-      <div className="max-w-6xl mx-auto px-6" style={{ padding: "80px 24px 40px" }}>
+      <div className="max-w-6xl mx-auto px-6" style={{ padding: "72px 24px 36px" }}>
 
-        {/* Top: Brand + Cols */}
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-12">
 
           {/* Brand block */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <span style={{
                 display: "inline-block",
                 width: 2,
-                height: 40,
+                height: 32,
                 background: "#FF6200",
                 boxShadow: "0 0 8px rgba(255,98,0,0.6)",
               }} />
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-                <span style={{
-                  fontFamily: "var(--font-playfair), 'Playfair Display', serif",
-                  fontSize: 26,
-                  fontWeight: 800,
-                  color: "#fff",
-                  letterSpacing: "0.02em",
-                }}>
-                  Gym<span style={{ color: "#FF6200" }}>·</span>Kaigyo
-                </span>
-                <span style={{
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: "rgba(255,255,255,0.5)",
-                  letterSpacing: "0.35em",
-                  marginTop: 5,
-                  textTransform: "uppercase",
-                }}>
-                  The Lab — est. 2026
-                </span>
-              </div>
+              <span style={{
+                color: "#fff",
+                fontSize: 24,
+                fontWeight: 900,
+                letterSpacing: "0.04em",
+              }}>
+                ジム開業ラボ
+              </span>
             </div>
             <p style={{
               color: "rgba(255,255,255,0.55)",
               fontSize: 13,
               lineHeight: 1.85,
               maxWidth: 320,
-              marginBottom: 24,
+              marginBottom: 22,
             }}>
               副業から始める、ジム経営のリアル。<br />
-              パーソナル＋レンタルの2業態を運営するオーナーが、費用・器具・集客・AI活用まで実数字で公開しています。
+              パーソナルジムとレンタルジムを運営するオーナーが、費用・器具・集客・AI活用まで実数字で公開しています。
             </p>
             <div style={{ display: "flex", gap: 16 }}>
-              {/* Social placeholders */}
               {[
                 { label: "X", href: "https://x.com/gym_kaigyo_lab" },
                 { label: "Threads", href: "#" },
-                { label: "Note", href: "#" },
+                { label: "note", href: "#" },
               ].map((s) => (
                 <Link key={s.label} href={s.href}
                   style={{
-                    fontFamily: "var(--font-playfair), serif",
-                    fontStyle: "italic",
                     fontSize: 13,
-                    color: "rgba(255,255,255,0.6)",
+                    color: "rgba(255,255,255,0.7)",
                     textDecoration: "none",
                     borderBottom: "1px solid rgba(255,255,255,0.2)",
                     paddingBottom: 2,
@@ -105,24 +86,19 @@ export function FooterV2() {
           {/* Link cols */}
           {COLS.map((col) => (
             <div key={col.heading}>
-              <div style={{ marginBottom: 18 }}>
-                <span style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  color: "#FF8C42",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  display: "block",
-                }}>
-                  {col.heading}
-                </span>
-                <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", marginTop: 2, display: "block" }}>
-                  {col.headingJp}
-                </span>
-              </div>
-              <nav style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{
+                fontSize: 13,
+                fontWeight: 800,
+                color: "#fff",
+                marginBottom: 18,
+                display: "block",
+                paddingBottom: 10,
+                borderBottom: "1px solid rgba(255,98,0,0.4)",
+                width: "fit-content",
+              }}>
+                {col.heading}
+              </span>
+              <nav style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 18 }}>
                 {col.links.map((link) => (
                   <Link key={link.href} href={link.href}
                     style={{ color: "rgba(255,255,255,0.7)", fontSize: 13, textDecoration: "none" }}
@@ -136,31 +112,18 @@ export function FooterV2() {
           ))}
         </div>
 
-        {/* Divider */}
         <div style={{
           height: 1,
           background: "rgba(255,255,255,0.08)",
-          margin: "60px 0 24px",
+          margin: "56px 0 24px",
         }} />
 
-        {/* Bottom: Copyright */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <p style={{
-            fontFamily: "var(--font-playfair), serif",
-            fontSize: 12,
-            color: "rgba(255,255,255,0.4)",
-            fontStyle: "italic",
-          }}>
-            © 2026 Gym Kaigyo Lab. All rights reserved.
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>
+            © 2026 ジム開業ラボ
           </p>
-          <p style={{
-            fontSize: 10,
-            fontWeight: 600,
-            color: "rgba(255,255,255,0.3)",
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-          }}>
-            Tokyo / Japan
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.3)" }}>
+            東京 / Japan
           </p>
         </div>
       </div>
