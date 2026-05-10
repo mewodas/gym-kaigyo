@@ -2,12 +2,12 @@ import Link from "next/link";
 import { getAllArticles, getCategoryLabel } from "@/lib/articles";
 
 const CATEGORIES = [
-  { slug: "kaigyo", label: "OPEN", labelJp: "開業手順", desc: "物件・工事・手続きの全ステップ", num: "01" },
-  { slug: "hiyou", label: "COST", labelJp: "費用・資金", desc: "実際にかかった金額を全公開", num: "02" },
-  { slug: "kigu", label: "GEAR", labelJp: "器具・設備", desc: "何を買うべきか・中古活用術", num: "03" },
-  { slug: "shukaku", label: "REACH", labelJp: "集客", desc: "Google・SNS・紹介の効果別解説", num: "04" },
-  { slug: "ai-keiei", label: "SHIFT", labelJp: "AI活用経営", desc: "Claudeで業務を8割自動化", num: "05" },
-  { slug: "fukugyou", label: "BUILD", labelJp: "副業トレーナー", desc: "副業→独立へのロードマップ", num: "06" },
+  { slug: "kaigyo", labelJp: "開業手順", desc: "物件・工事・手続きの全ステップ", num: "01" },
+  { slug: "hiyou", labelJp: "費用・資金", desc: "実際にかかった金額を全公開", num: "02" },
+  { slug: "kigu", labelJp: "器具・設備", desc: "何を買うべきか・中古活用術", num: "03" },
+  { slug: "shukaku", labelJp: "集客", desc: "Google・SNS・紹介の効果別解説", num: "04" },
+  { slug: "ai-keiei", labelJp: "AI活用経営", desc: "Claudeで業務を8割自動化", num: "05" },
+  { slug: "fukugyou", labelJp: "副業トレーナー", desc: "副業→独立へのロードマップ", num: "06" },
 ];
 
 const STATS = [
@@ -26,34 +26,24 @@ export default function HomeV2() {
       {/* ── HERO ── */}
       <section style={{
         position: "relative",
-        minHeight: 560,
+        minHeight: 580,
         overflow: "hidden",
         background: "#0a0e1a",
       }}>
-        {/* 背景画像 */}
+        {/* 背景画像（ブラー弱め・はっきり見せる） */}
         <div style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url(/x-header-raw.jpg)",
+          backgroundImage: "url(/x-header-noperson-v3.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.55,
+          backgroundPosition: "right center",
+          opacity: 0.85,
         }} />
-        {/* グラデーションオーバーレイ */}
+        {/* 左側だけ暗くして文字を読みやすく（右側のケトルベルははっきり見せる） */}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(90deg, rgba(10,14,26,0.95) 0%, rgba(10,14,26,0.7) 50%, rgba(10,14,26,0.4) 100%)",
-        }} />
-        {/* オレンジグロー */}
-        <div style={{
-          position: "absolute",
-          right: -120,
-          top: -120,
-          width: 480,
-          height: 480,
-          background: "radial-gradient(circle, rgba(255,98,0,0.35) 0%, transparent 70%)",
-          pointerEvents: "none",
+          background: "linear-gradient(90deg, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.72) 35%, rgba(10,14,26,0.2) 65%, transparent 100%)",
         }} />
 
         {/* コンテンツ */}
@@ -61,79 +51,53 @@ export default function HomeV2() {
           position: "relative",
           maxWidth: 1100,
           margin: "0 auto",
-          padding: "120px 24px 100px",
+          padding: "100px 24px 80px",
         }}>
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            background: "rgba(255,98,0,0.12)",
-            border: "1px solid rgba(255,98,0,0.4)",
-            borderRadius: 100,
-            padding: "6px 16px",
-            marginBottom: 32,
-            backdropFilter: "blur(10px)",
-          }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#FF6200", boxShadow: "0 0 12px #FF6200" }} />
-            <span style={{ color: "#FF8C42", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em" }}>
-              REAL OWNER ／ BUILD IN PUBLIC
-            </span>
-          </div>
+          <p style={{ color: "#FF8C42", fontWeight: 700, fontSize: 13, marginBottom: 16, letterSpacing: "0.05em" }}>
+            副業からスタートし、2業態を運営するオーナーが書く
+          </p>
 
           <h1 style={{
-            fontSize: "clamp(48px, 7vw, 96px)",
+            fontSize: "clamp(36px, 5vw, 64px)",
             fontWeight: 900,
-            lineHeight: 1.05,
-            letterSpacing: "-2.5px",
-            marginBottom: 28,
-            maxWidth: 800,
+            color: "#fff",
+            lineHeight: 1.18,
+            letterSpacing: "-1.5px",
+            marginBottom: 24,
+            maxWidth: 720,
           }}>
-            副業から始める<br />
             <span style={{
               background: "linear-gradient(135deg, #FF6200 0%, #FFB169 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-            }}>ジム経営</span>のリアル。
+            }}>パーソナルジム開業</span>の<br />
+            リアルをすべて公開
           </h1>
 
           <p style={{
-            fontSize: 17,
-            color: "rgba(255,255,255,0.72)",
+            fontSize: 16,
+            color: "rgba(255,255,255,0.78)",
             lineHeight: 1.85,
-            marginBottom: 44,
-            maxWidth: 560,
+            marginBottom: 36,
+            maxWidth: 540,
           }}>
-            パーソナル＋レンタルの2業態を同一スペースで運営する個人オーナーが、
-            費用・器具・集客・AI活用まで実数字で公開しています。
+            パーソナルジムとレンタルジムを運営するオーナーが、
+            費用・器具・集客・AI活用まで実数字で解説します。
           </p>
 
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Link href="/kaigyo/kanzen-guide" style={{
               background: "#FF6200",
               color: "#fff",
               borderRadius: 100,
-              padding: "16px 32px",
+              padding: "15px 30px",
               fontSize: 15,
               fontWeight: 700,
-              boxShadow: "0 8px 32px rgba(255,98,0,0.5)",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
+              boxShadow: "0 8px 28px rgba(255,98,0,0.45)",
+              display: "inline-block",
             }} className="hover:opacity-90 transition-opacity">
               開業完全ガイドを読む →
-            </Link>
-            <Link href="#categories" style={{
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              color: "#fff",
-              borderRadius: 100,
-              padding: "16px 32px",
-              fontSize: 15,
-              fontWeight: 600,
-              backdropFilter: "blur(10px)",
-            }} className="hover:bg-white/15 transition-colors">
-              カテゴリを探す
             </Link>
           </div>
         </div>
@@ -172,23 +136,26 @@ export default function HomeV2() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ marginBottom: 48, textAlign: "center" }}>
             <span style={{
-              fontSize: 12,
+              display: "inline-block",
+              background: "#FF6200",
+              color: "#fff",
+              borderRadius: 100,
+              padding: "5px 20px",
+              fontSize: 14,
               fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "#FF8C42",
+              marginBottom: 16,
             }}>
-              CATEGORIES
+              カテゴリから探す
             </span>
             <h2 style={{
-              fontSize: "clamp(32px, 4vw, 48px)",
+              fontSize: "clamp(28px, 3.5vw, 40px)",
               fontWeight: 900,
-              letterSpacing: "-1px",
-              marginTop: 12,
-              marginBottom: 12,
+              letterSpacing: "-0.8px",
+              marginBottom: 10,
             }}>
               6つのテーマで、開業のすべてを。
             </h2>
-            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)" }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>
               現場で得た学びを、実数字で構造化しています。
             </p>
           </div>
@@ -218,15 +185,15 @@ export default function HomeV2() {
 
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
                   <span style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: 700,
-                    letterSpacing: "0.15em",
                     color: "#FF8C42",
                     background: "rgba(255,98,0,0.12)",
-                    padding: "4px 10px",
+                    padding: "4px 12px",
                     borderRadius: 4,
+                    fontVariantNumeric: "tabular-nums",
                   }}>
-                    {cat.num} ／ {cat.label}
+                    {cat.num}
                   </span>
                   <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 18 }}>→</span>
                 </div>
@@ -246,20 +213,30 @@ export default function HomeV2() {
       {recentArticles.length > 0 && (
         <section style={{ background: "#0a0e1a", padding: "60px 24px 100px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <div style={{ marginBottom: 36, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-              <div>
-                <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", color: "#FF8C42" }}>
-                  LATEST
-                </span>
-                <h2 style={{
-                  fontSize: 32,
-                  fontWeight: 900,
-                  letterSpacing: "-0.5px",
-                  marginTop: 8,
-                }}>
-                  新着の記録
-                </h2>
-              </div>
+            <div style={{
+              borderBottom: "1px solid rgba(255,98,0,0.4)",
+              paddingBottom: 12,
+              marginBottom: 28,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}>
+              <span style={{
+                background: "#FF6200",
+                color: "#fff",
+                borderRadius: 4,
+                padding: "3px 12px",
+                fontWeight: 700,
+                fontSize: 13,
+              }}>NEW</span>
+              <h2 style={{
+                fontSize: 22,
+                fontWeight: 900,
+                color: "#fff",
+                letterSpacing: "-0.3px",
+              }}>
+                新着記事
+              </h2>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
@@ -355,38 +332,29 @@ export default function HomeV2() {
           }} />
 
           <div style={{ position: "relative" }}>
-            <span style={{
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: "0.25em",
-              color: "#FF8C42",
-            }}>
-              SHIFT YOUR PATH
-            </span>
             <h2 style={{
-              fontSize: "clamp(28px, 4vw, 40px)",
+              fontSize: "clamp(24px, 3vw, 32px)",
               fontWeight: 900,
               color: "#fff",
-              marginTop: 14,
-              marginBottom: 16,
-              letterSpacing: "-0.5px",
+              marginBottom: 14,
+              letterSpacing: "-0.3px",
             }}>
               副業からでも、ジム経営は始められる。
             </h2>
-            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", lineHeight: 1.85, marginBottom: 36 }}>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.65)", lineHeight: 1.85, marginBottom: 32 }}>
               開業ノウハウ・実数値・AI活用法を、すべて公開しています。
             </p>
             <Link href="/kaigyo/kanzen-guide" style={{
               background: "#FF6200",
               color: "#fff",
               borderRadius: 100,
-              padding: "16px 40px",
-              fontSize: 16,
+              padding: "15px 36px",
+              fontSize: 15,
               fontWeight: 700,
               display: "inline-block",
-              boxShadow: "0 8px 32px rgba(255,98,0,0.5)",
+              boxShadow: "0 8px 28px rgba(255,98,0,0.45)",
             }} className="hover:opacity-90 transition-opacity">
-              開業ガイドを読む →
+              開業完全ガイドを読む →
             </Link>
           </div>
         </div>

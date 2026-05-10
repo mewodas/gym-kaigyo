@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
+import { HeaderWrapper } from "@/components/HeaderWrapper";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
 
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <body className={`${notoSansJP.className} bg-white text-gray-900 antialiased`}>
-        <Header />
+        <HeaderWrapper />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Analytics />
