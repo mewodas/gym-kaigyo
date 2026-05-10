@@ -2,32 +2,48 @@ import { ArticleMeta, getCategoryLabel } from "./types";
 
 const SITE_URL = "https://gym-kaigyo.jp";
 const SITE_NAME = "ジム開業ラボ";
-const SITE_LOGO = `${SITE_URL}/opengraph-image`;
+const OGP_IMAGE = `${SITE_URL}/opengraph-image`;
 const PUBLISHER_NAME = "ジム開業ラボ";
+
+const PUBLISHER_LOGO = {
+  "@type": "ImageObject",
+  url: OGP_IMAGE,
+  width: 1200,
+  height: 630,
+};
+
+const ARTICLE_IMAGE = {
+  "@type": "ImageObject",
+  url: OGP_IMAGE,
+  width: 1200,
+  height: 630,
+};
 
 export function buildArticleJsonLd(article: ArticleMeta) {
   const url = `${SITE_URL}/${article.category}/${article.slug}`;
+  const dateIso = article.date
+    ? new Date(article.date).toISOString()
+    : new Date().toISOString();
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.description,
-    datePublished: article.date,
-    dateModified: article.date,
+    image: ARTICLE_IMAGE,
+    datePublished: dateIso,
+    dateModified: dateIso,
     author: {
-      "@type": "Organization",
-      name: PUBLISHER_NAME,
-      url: SITE_URL,
+      "@type": "Person",
+      name: "ジム開業ラボ オーナー",
+      url: `${SITE_URL}/profile`,
     },
     publisher: {
       "@type": "Organization",
       name: PUBLISHER_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE_LOGO,
-      },
+      url: SITE_URL,
+      logo: PUBLISHER_LOGO,
     },
-    image: SITE_LOGO,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
@@ -79,10 +95,7 @@ export function buildWebsiteJsonLd() {
       "@type": "Organization",
       name: PUBLISHER_NAME,
       url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE_LOGO,
-      },
+      logo: PUBLISHER_LOGO,
     },
   };
 }
@@ -93,7 +106,8 @@ export function buildOrganizationJsonLd() {
     "@type": "Organization",
     name: PUBLISHER_NAME,
     url: SITE_URL,
-    logo: SITE_LOGO,
-    description: "パーソナルジム開業のリアルを、実際に開業したオーナーが解説するメディア。",
+    logo: PUBLISHER_LOGO,
+    description:
+      "パーソナルジム開業のリアルを、実際に開業したオーナーが解説するメディア。",
   };
 }
