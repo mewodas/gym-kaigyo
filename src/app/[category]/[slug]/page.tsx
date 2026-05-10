@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getArticle, getAllSlugs, getCategoryLabel, getRelatedArticles } from "@/lib/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { calculateReadingTime } from "@/lib/reading-time";
@@ -106,7 +107,10 @@ export default async function ArticlePage({ params }: Props) {
       <div style={{ background: "#fff", padding: "48px 0 64px" }}>
         <div className="max-w-3xl mx-auto px-6">
           <article className="prose prose-gray max-w-none">
-            <MDXRemote source={article.content} />
+            <MDXRemote
+              source={article.content}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+            />
           </article>
         </div>
       </div>
