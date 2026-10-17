@@ -2,8 +2,8 @@ import Link from "next/link";
 import { getAllArticles, getAreaArticles, getCategoryLabel } from "@/lib/articles";
 import { buildWebsiteJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 
-// 山手線でまだ記事がない駅（調査中として表示）
-const PENDING_STATIONS: string[] = [];
+// トップの駅一覧の並び（stations の line に対応）
+const AREA_GROUPS = ["山手線", "主要駅"];
 
 const VIEWPOINTS = [
   { label: "経営者目線", desc: "駅ごとの乗車人員、価格帯の分布、競合の打ち出し方、まだ空いているポジションを整理します。" },
@@ -151,7 +151,7 @@ export default function Home() {
               fontWeight: 700,
               marginBottom: 16,
             }}>
-              山手線 駅別ジム調査
+              駅別ジム調査
             </span>
             <h2 style={{
               fontSize: "clamp(28px, 3.5vw, 40px)",
@@ -163,46 +163,43 @@ export default function Home() {
               駅を選んで、ジムと競合を調べる。
             </h2>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
-              料金・所在地はすべて各ジムの公式サイトで確認しています（2026年10月調査）。
+              山手線全駅と都内の主要駅を調査中。料金・所在地はすべて各ジムの公式サイトで確認しています（2026年10月調査）。
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 14 }}>
-            {areaArticles.map((a) => {
-              const count = a.title.match(/(\d+)選/)?.[1];
-              return (
-                <Link key={a.slug} href={`/area/${a.slug}`} style={{
-                  background: "#e8e2d6",
-                  border: "1px solid rgba(255, 98, 0, 0.35)",
-                  borderRadius: 12,
-                  padding: "16px 18px",
-                  display: "block",
-                  transition: "all 0.3s",
-                }} className="hover:-translate-y-1">
-                  <div style={{ fontWeight: 900, fontSize: 17, color: "#1a1a1a", lineHeight: 1.4 }}>
-                    {a.station}
-                  </div>
-                  <div style={{ fontSize: 12, color: "#FF6200", fontWeight: 700, marginTop: 6 }}>
-                    {count ? `${count}店を比較 →` : "記事を読む →"}
-                  </div>
-                </Link>
-              );
-            })}
-            {PENDING_STATIONS.map((name) => (
-              <div key={name} style={{
-                border: "1px dashed rgba(255,255,255,0.25)",
-                borderRadius: 12,
-                padding: "16px 18px",
-              }}>
-                <div style={{ fontWeight: 900, fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.4 }}>
-                  {name}
-                </div>
-                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 6 }}>
-                  調査中
+          {AREA_GROUPS.map((group) => {
+            const items = areaArticles.filter((a) => (a.line ?? "山手線") === group);
+            if (items.length === 0) return null;
+            return (
+              <div key={group} style={{ marginBottom: 36 }}>
+                <h3 style={{ color: "#FF8C42", fontWeight: 800, fontSize: 15, marginBottom: 14, letterSpacing: "0.05em" }}>
+                  {group}
+                </h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 14 }}>
+                  {items.map((a) => {
+                    const count = a.title.match(/(\d+)選/)?.[1];
+                    return (
+                      <Link key={a.slug} href={`/area/${a.slug}`} style={{
+                        background: "#e8e2d6",
+                        border: "1px solid rgba(255, 98, 0, 0.35)",
+                        borderRadius: 12,
+                        padding: "16px 18px",
+                        display: "block",
+                        transition: "all 0.3s",
+                      }} className="hover:-translate-y-1">
+                        <div style={{ fontWeight: 900, fontSize: 17, color: "#1a1a1a", lineHeight: 1.4 }}>
+                          {a.station}
+                        </div>
+                        <div style={{ fontSize: 12, color: "#FF6200", fontWeight: 700, marginTop: 6 }}>
+                          {count ? `${count}店を比較 →` : "記事を読む →"}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginTop: 56 }}>
             {VIEWPOINTS.map((v) => (

@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from chains import CHAINS, CHECKED  # noqa: E402
 from stations import RIDERSHIP, STATIONS  # noqa: E402
+from stations_major import MAJOR  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "content", "area")
 DATE = "2026-10-17"
@@ -87,7 +88,7 @@ def build(st):
     out.append(f'date: "{DATE}"')
     out.append("tags: [" + ", ".join(f'"{t}"' for t in tags) + "]")
     out.append(f'station: "{short}"')
-    out.append('line: "山手線"')
+    out.append(f'line: "{st.get("line", "山手線")}"')
     out.append(f"order: {st['order']}")
     out.append("---")
     out.append("")
@@ -176,11 +177,12 @@ def build(st):
     out.append(f"ここからは、{short}周辺でパーソナルジムを開業したい人、すでに運営している人向けの内容です。")
     out.append("")
     out.append("### 商圏の特徴")
-    for s in st["stations"]:
-        if s in RIDERSHIP:
-            num, rank = RIDERSHIP[s]
-            out.append(f"- JR{s}駅の1日平均乗車人員は**{num:,}人**（山手線30駅中{rank}位）")
-    out.append("- 出典：JR東日本「各駅の乗車人員 2024年度」")
+    hit = [s for s in st["stations"] if s in RIDERSHIP]
+    for s in hit:
+        num, rank = RIDERSHIP[s]
+        out.append(f"- JR{s}駅の1日平均乗車人員は**{num:,}人**（山手線30駅中{rank}位）")
+    if hit:
+        out.append("- 出典：JR東日本「各駅の乗車人員 2024年度」")
     out.append(f"- {st['market']}")
     out.append("")
 
@@ -261,7 +263,7 @@ def build(st):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    for st in STATIONS:
+    for st in STATIONS + MAJOR:
         path = os.path.join(OUT_DIR, f"{st['slug']}.mdx")
         with open(path, "w", encoding="utf-8") as f:
             f.write(build(st))
