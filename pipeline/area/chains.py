@@ -793,3 +793,17 @@ CHAINS = {
         "comment": "部位やせを掲げるジムでも、土台は全身の体脂肪を落とすことです。食事のサポートがどこまで含まれるかも体験で確認しましょう。",
     },
 }
+
+
+# 個人・小規模ジム（pipeline/area/indie/gyms.py）を同じ形式で登録
+def _register_indies():
+    import os
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "indie"))
+    from gyms import INDIES
+    from registry import to_chain
+    for g in INDIES:
+        CHAINS["ind_" + g["key"]] = to_chain(g)
+
+
+_register_indies()

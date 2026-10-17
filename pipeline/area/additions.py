@@ -89,8 +89,48 @@ def _auto():
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
 
 
+def _indies(stations):
+    """個人・小規模ジムを、住所の位置から最寄りの記事（駅から1km以内）へ振り分ける。"""
+    import json
+    import math
+    import os
+    import re
+    import sys
+    here = os.path.dirname(__file__)
+    sys.path.insert(0, os.path.join(here, "indie"))
+    from gyms import INDIES
+    from export_map import geocode, CACHE
+    cache = json.load(open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
+    st_xy = {}
+    for s in json.load(open(os.path.join(here, "research", "stations_tokyo.json"), encoding="utf-8")):
+        st_xy.setdefault(s["name"], (s["lat"], s["lng"]))
+
+    def dist(a, b, c, d):
+        p1, p2 = math.radians(a), math.radians(c)
+        return 2 * 6371000 * math.asin(math.sqrt(math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(d - b) / 2) ** 2))
+
+    out = {}
+    for g in INDIES:
+        lat, lng = geocode(g["address"], cache)
+        if not lat:
+            continue
+        best = None
+        for st in stations:
+            for n in re.split("・", st["short"]) + st.get("stations", []):
+                if n in st_xy:
+                    d = dist(lat, lng, *st_xy[n])
+                    if d <= 1000 and (best is None or d < best[1]):
+                        best = (st["slug"], d)
+        if best:
+            out.setdefault(best[0], []).append({"chain": "ind_" + g["key"], "store": g["name"], "address": g["address"],
+                                                "access": g["access"], "short_access": g["short"], "hours": g["hours"]})
+    json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
+    return out
+
+
 def apply(stations):
     auto = _auto()
+    indies = _indies(stations)
     for st in stations:
-        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], []) + auto.get(st["slug"], []) + SMALL.get(st["slug"], [])
+        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], []) + auto.get(st["slug"], []) + SMALL.get(st["slug"], []) + indies.get(st["slug"], [])
     return stations
