@@ -3,7 +3,7 @@ import { getAllArticles, getAreaArticles, getCategoryLabel } from "@/lib/article
 import { buildWebsiteJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 
 // 山手線でまだ記事がない駅（調査中として表示）
-const PENDING_STATIONS = ["大崎", "目黒", "原宿", "田端"];
+const PENDING_STATIONS: string[] = [];
 
 const VIEWPOINTS = [
   { label: "経営者目線", desc: "駅ごとの乗車人員、価格帯の分布、競合の打ち出し方、まだ空いているポジションを整理します。" },
