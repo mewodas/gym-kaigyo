@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const NAV_ITEMS = [
+  { label: "エリア調査", href: "/area" },
   { label: "開業手順", href: "/kaigyo" },
   { label: "費用・資金", href: "/hiyou" },
   { label: "器具・設備", href: "/kigu" },

@@ -1,8 +1,18 @@
 import Link from "next/link";
-import { getAllArticles, getCategoryLabel } from "@/lib/articles";
+import { getAllArticles, getAreaArticles, getCategoryLabel } from "@/lib/articles";
 import { buildWebsiteJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 
+// 山手線でまだ記事がない駅（調査中として表示）
+const PENDING_STATIONS = ["大崎", "目黒", "原宿", "田端"];
+
+const VIEWPOINTS = [
+  { label: "経営者目線", desc: "駅ごとの乗車人員、価格帯の分布、競合の打ち出し方、まだ空いているポジションを整理します。" },
+  { label: "トレーナー目線", desc: "現役トレーナーとして、料金表だけでは分からない「続けやすさ」の見方を添えます。" },
+  { label: "ユーザー目線", desc: "初期費用・短時間・女性専用など、目的別にどのジムが合うかをまとめます。" },
+];
+
 const CATEGORIES = [
+  { slug: "area", labelJp: "エリア調査", desc: "駅ごとのジム比較と競合分析", num: "00" },
   { slug: "kaigyo", labelJp: "開業手順", desc: "物件・工事・手続きの全ステップ", num: "01" },
   { slug: "hiyou", labelJp: "費用・資金", desc: "実際にかかった金額を全公開", num: "02" },
   { slug: "kigu", labelJp: "器具・設備", desc: "何を買うべきか・中古活用術", num: "03" },
@@ -13,7 +23,8 @@ const CATEGORIES = [
 
 export default function Home() {
   const allArticles = getAllArticles();
-  const recentArticles = allArticles.slice(0, 6);
+  const recentArticles = allArticles.filter((a) => a.category !== "area").slice(0, 6);
+  const areaArticles = getAreaArticles();
   const websiteJsonLd = buildWebsiteJsonLd();
   const orgJsonLd = buildOrganizationJsonLd();
 
@@ -67,7 +78,7 @@ export default function Home() {
             marginBottom: 20,
             letterSpacing: "0.05em",
           }}>
-            副業で今も2業態を運営するオーナーが書く
+            現役ジムオーナーが、街ごとに調べる
           </p>
 
           <h1 style={{
@@ -84,8 +95,8 @@ export default function Home() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-            }}>パーソナルジム開業</span>の<br />
-            リアルをすべて公開
+            }}>エリア調査</span>で、<br />
+            勝てるジムをつくる。
           </h1>
 
           <p style={{
@@ -95,13 +106,13 @@ export default function Home() {
             marginBottom: 36,
             maxWidth: 580,
           }}>
-            パーソナルジムとレンタルジムを運営するオーナーが、
-            費用・器具・集客・<span style={{ color: "#FF8C42", fontWeight: 700 }}>AI活用で事務作業の8割を工数削減する方法</span>まで、
-            実数字で解説します。
+            山手線の駅ごとに、パーソナルジムの料金・立地・強みを公式情報から調査。
+            開業を考える経営者には<span style={{ color: "#FF8C42", fontWeight: 700 }}>競合分析</span>を、
+            ジムを探している人には目的別の選び方を届けます。
           </p>
 
           <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <Link href="/kaigyo/kanzen-guide" style={{
+            <Link href="#area" style={{
               background: "#FF6200",
               color: "#fff",
               borderRadius: 100,
@@ -111,17 +122,100 @@ export default function Home() {
               boxShadow: "0 8px 28px rgba(255,98,0,0.45)",
               display: "inline-block",
             }} className="hover:opacity-90 transition-opacity">
-              開業完全ガイドを読む →
+              駅から調べる →
             </Link>
-            <Link href="#categories" style={{
+            <Link href="/kaigyo/kanzen-guide" style={{
               color: "rgba(255,255,255,0.85)",
               fontSize: 14,
               fontWeight: 600,
               borderBottom: "1px solid rgba(255,255,255,0.4)",
               paddingBottom: 4,
             }} className="hover:text-white hover:border-white transition-colors">
-              カテゴリを探す
+              開業完全ガイドを読む
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AREA ── */}
+      <section id="area" style={{ background: "#0a0e1a", padding: "100px 24px 40px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ marginBottom: 40, textAlign: "center" }}>
+            <span style={{
+              display: "inline-block",
+              background: "#FF6200",
+              color: "#fff",
+              borderRadius: 100,
+              padding: "5px 20px",
+              fontSize: 14,
+              fontWeight: 700,
+              marginBottom: 16,
+            }}>
+              山手線 駅別ジム調査
+            </span>
+            <h2 style={{
+              fontSize: "clamp(28px, 3.5vw, 40px)",
+              fontWeight: 900,
+              letterSpacing: "-0.8px",
+              marginBottom: 10,
+              color: "#fff",
+            }}>
+              駅を選んで、ジムと競合を調べる。
+            </h2>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
+              料金・所在地はすべて各ジムの公式サイトで確認しています（2026年10月調査）。
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 14 }}>
+            {areaArticles.map((a) => {
+              const count = a.title.match(/(\d+)選/)?.[1];
+              return (
+                <Link key={a.slug} href={`/area/${a.slug}`} style={{
+                  background: "#e8e2d6",
+                  border: "1px solid rgba(255, 98, 0, 0.35)",
+                  borderRadius: 12,
+                  padding: "16px 18px",
+                  display: "block",
+                  transition: "all 0.3s",
+                }} className="hover:-translate-y-1">
+                  <div style={{ fontWeight: 900, fontSize: 17, color: "#1a1a1a", lineHeight: 1.4 }}>
+                    {a.station}
+                  </div>
+                  <div style={{ fontSize: 12, color: "#FF6200", fontWeight: 700, marginTop: 6 }}>
+                    {count ? `${count}店を比較 →` : "記事を読む →"}
+                  </div>
+                </Link>
+              );
+            })}
+            {PENDING_STATIONS.map((name) => (
+              <div key={name} style={{
+                border: "1px dashed rgba(255,255,255,0.25)",
+                borderRadius: 12,
+                padding: "16px 18px",
+              }}>
+                <div style={{ fontWeight: 900, fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.4 }}>
+                  {name}
+                </div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 6 }}>
+                  調査中
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginTop: 56 }}>
+            {VIEWPOINTS.map((v) => (
+              <div key={v.label} style={{
+                background: "linear-gradient(135deg, #131826 0%, #0a0e1a 100%)",
+                border: "1px solid rgba(255,98,0,0.25)",
+                borderRadius: 14,
+                padding: "22px 22px",
+              }}>
+                <div style={{ color: "#FF8C42", fontWeight: 800, fontSize: 15, marginBottom: 8 }}>{v.label}</div>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.8 }}>{v.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -150,14 +244,14 @@ export default function Home() {
               marginBottom: 10,
               color: "#fff",
             }}>
-              6つのテーマで、開業のすべてを。
+              開業ノウハウも、テーマ別に。
             </h2>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>
               現場で得た学びを、実数字で構造化しています。
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
             {CATEGORIES.map((cat) => (
               <Link key={cat.slug} href={`/${cat.slug}`} style={{
                 position: "relative",
@@ -327,10 +421,10 @@ export default function Home() {
               marginBottom: 14,
               letterSpacing: "-0.3px",
             }}>
-              副業からでも、ジム経営は始められる。
+              出店エリアの調査から、開業まで。
             </h2>
             <p style={{ fontSize: 15, color: "rgba(255,255,255,0.65)", lineHeight: 1.85, marginBottom: 32 }}>
-              開業ノウハウ・実数値・AI活用法を、すべて公開しています。
+              競合の多い街・空いている街を見極めてから、物件・資金・集客の準備へ進みましょう。
             </p>
             <Link href="/kaigyo/kanzen-guide" style={{
               background: "#FF6200",

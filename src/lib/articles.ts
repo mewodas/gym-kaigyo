@@ -32,6 +32,9 @@ export function getAllArticles(): ArticleMeta[] {
         description: data.description ?? "",
         date: data.date ?? "",
         tags: data.tags ?? [],
+        station: data.station,
+        line: data.line,
+        order: data.order,
       });
     }
   }
@@ -41,6 +44,11 @@ export function getAllArticles(): ArticleMeta[] {
 
 export function getArticlesByCategory(category: string): ArticleMeta[] {
   return getAllArticles().filter((a) => a.category === category);
+}
+
+// エリア調査記事を路線の駅順で返す
+export function getAreaArticles(): ArticleMeta[] {
+  return getArticlesByCategory("area").sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 }
 
 export function getRelatedArticles(
@@ -73,6 +81,9 @@ export function getArticle(category: string, slug: string): Article | null {
         description: data.description ?? "",
         date: data.date ?? "",
         tags: data.tags ?? [],
+        station: data.station,
+        line: data.line,
+        order: data.order,
         content,
       };
     }

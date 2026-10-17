@@ -22,11 +22,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gym-kaigyo.jp"),
   title: {
-    default: "ジム開業ラボ｜実際に開業したオーナーが書く開業マニュアル",
+    default: "ジム開業ラボ｜パーソナルジムのエリア調査・競合分析と開業ノウハウ",
     template: "%s | ジム開業ラボ",
   },
   description:
-    "パーソナルジムを実際に開業したオーナーが、費用・器具・集客・AI活用まで全手順をリアルな数字で解説。副業トレーナーから独立を目指す方にも。",
+    "現役ジムオーナーが山手線の駅ごとにパーソナルジムを調査。料金・立地・強みの比較と、開業を考える人向けの競合分析、開業の全手順をまとめています。",
   keywords: [
     "パーソナルジム開業",
     "ジム経営",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     type: "website",
     url: "https://gym-kaigyo.jp",
-    title: "ジム開業ラボ｜実際に開業したオーナーが書く開業マニュアル",
+    title: "ジム開業ラボ｜パーソナルジムのエリア調査・競合分析と開業ノウハウ",
     description:
       "パーソナルジムを実際に開業したオーナーが、費用・器具・集客・AI活用まで全手順をリアルな数字で解説。",
   },

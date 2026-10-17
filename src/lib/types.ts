@@ -6,11 +6,16 @@ export type Article = {
   date: string;
   tags: string[];
   content: string;
+  // エリア調査記事のみ
+  station?: string;
+  line?: string;
+  order?: number;
 };
 
 export type ArticleMeta = Omit<Article, "content">;
 
 export const CATEGORY_LABELS: Record<string, string> = {
+  area: "エリア調査",
   kaigyo: "開業手順",
   hiyou: "費用・資金",
   kigu: "器具・設備",
