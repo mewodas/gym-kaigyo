@@ -3,7 +3,7 @@ import { getAllArticles, getAreaArticles, getCategoryLabel } from "@/lib/article
 import { buildWebsiteJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 
 // トップの駅一覧の並び（stations の line に対応）
-const AREA_GROUPS = ["山手線", "主要駅"];
+const AREA_GROUPS = ["山手線", "23区", "多摩地域"];
 
 const VIEWPOINTS = [
   { label: "経営者目線", desc: "駅ごとの乗車人員、価格帯の分布、競合の打ち出し方、まだ空いているポジションを整理します。" },

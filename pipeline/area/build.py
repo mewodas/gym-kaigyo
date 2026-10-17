@@ -91,7 +91,10 @@ def build(st):
     out.append(f'date: "{DATE}"')
     out.append("tags: [" + ", ".join(f'"{t}"' for t in tags) + "]")
     out.append(f'station: "{short}"')
-    out.append(f'line: "{st.get("line", "山手線")}"')
+    line = st.get("line", "山手線")
+    if line == "主要駅":  # トップの一覧は 23区 / 多摩地域 に分けて表示する
+        line = "多摩地域" if any(t.endswith("市") for t in st["tags"]) else "23区"
+    out.append(f'line: "{line}"')
     out.append(f"order: {st['order']}")
     out.append("---")
     out.append("")
