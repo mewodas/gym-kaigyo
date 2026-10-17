@@ -34,7 +34,7 @@ export default function AreaMapPage() {
         <div style={{ marginTop: 32, fontSize: 13, color: "#555", lineHeight: 1.9, background: "#f9fafb", borderRadius: 12, padding: "18px 20px" }}>
           <strong style={{ color: "#222" }}>データについて</strong>
           <ul style={{ listStyle: "disc", paddingLeft: 20, marginTop: 6 }}>
-            <li>掲載しているのは、主要チェーン（RIZAP・BEYOND・かたぎり塾・ASPI・アップルジム・MIYAZAKI GYM・24/7Workout・REAL WORKOUT など）の都内店舗と、当サイトの調査で公式情報を確認できた個人ジムです（2026年10月時点）。</li>
+            <li>掲載しているのは、主要チェーン（RIZAP・BEYOND・かたぎり塾・GOODLIFE GYM・ASPI・アップルジム・Dr.トレーニング・THE PERSONAL GYM・MIYAZAKI GYM・24/7Workout・REAL WORKOUT など、約640店）の都内店舗と、当サイトの調査で公式情報を確認できた個人ジムです（2026年10月時点）。</li>
             <li>個人経営のジムは一部しか含まれていないため、実際の競合数はこれより多くなります。開業判断の前には、必ず現地とGoogleマップでも確認してください。</li>
             <li>位置は住所から国土地理院の住所検索で求めたもので、建物の位置と多少ずれることがあります。駅の位置はHeartRails Expressのデータを使っています。</li>
             <li>都内平均との比較は、都内655駅それぞれを中心に同じ半径で数えた店舗数との比較です。</li>

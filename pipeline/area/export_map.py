@@ -140,6 +140,17 @@ def main():
         gyms.append({"name": f"RIZAP {r['name']}店", "chain": "rizap", "address": r["address"],
                      "access": r["station"].split("\r\n")[0], "hours": r["business_hours"], "tags": sorted(CHAINS["rizap"]["tags"]), "articles": []})
 
+    # 2b. 第2弾で集めたチェーン（GOODLIFE GYM・Dr.トレーニング・THE PERSONAL GYM など）
+    from assign_new import name_of, access_of  # 循環 import を避けるためここで読む
+    for r in json.load(open(os.path.join(RESEARCH, "stores2.json"), encoding="utf-8")):
+        k = addr_key(r["address"]) + r["chain"]
+        nm = name_of(r)
+        if k in seen or not nm or r["chain"] not in CHAINS:
+            continue
+        seen[k] = len(gyms)
+        gyms.append({"name": nm, "chain": r["chain"], "address": clean_addr(r["address"]),
+                     "access": access_of(r) or "最寄駅は公式サイトで確認", "hours": "", "tags": sorted(CHAINS[r["chain"]]["tags"]), "articles": []})
+
     # 3. 座標
     for i, gm in enumerate(gyms):
         lat, lng = geocode(gm["address"], cache)

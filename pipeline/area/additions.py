@@ -62,7 +62,16 @@ RIZAP = {
 }
 
 
+def _auto():
+    """assign_new.py が作った自動振り分け（GOODLIFE GYM・Dr.トレーニング・THE PERSONAL GYM など）。"""
+    import json
+    import os
+    p = os.path.join(os.path.dirname(__file__), "research", "auto_additions.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
 def apply(stations):
+    auto = _auto()
     for st in stations:
-        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], [])
+        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], []) + auto.get(st["slug"], [])
     return stations

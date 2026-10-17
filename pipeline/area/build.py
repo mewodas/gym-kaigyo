@@ -56,6 +56,20 @@ BAND_LABELS = {
 }
 
 
+FEATURE_WORDS = ("女性専用", "30分", "短時間", "入会金0円", "朝7時", "早朝", "7時")
+ABSENCE_WORDS = ("見当たりません", "のみ", "ありません", "限られて", "少なめ", "確認できません")
+
+
+def sanitize_gaps(text):
+    """手書きの見立てから「〇〇は無い／〇〇のみ」系の文を除く（店舗の追加で事実と食い違うため、上で自動生成する）。"""
+    keep = []
+    for sent in [x for x in text.split("。") if x.strip()]:
+        if any(w in sent for w in FEATURE_WORDS) and any(w in sent for w in ABSENCE_WORDS):
+            continue
+        keep.append(sent)
+    return "。".join(keep) + ("。" if keep else "")
+
+
 def resolve(g):
     c = CHAINS[g["chain"]]
     tags = list(c["tags"]) + g.get("extra_tags", [])
@@ -219,7 +233,13 @@ def build(st):
     missing = [lbl for t, lbl in GAP_LABELS.items() if not any(t in g["tags"] for g in gyms)]
     if missing:
         out.append(f"- 今回掲載した{n}店には、「" + "」「".join(missing) + "」を打ち出すジムがありませんでした（個人経営のジムなど、掲載外の店舗にはある可能性があります）。")
-    out.append(f"- {st['gaps']}")
+    for t, lbl in GAP_LABELS.items():
+        names = sorted({g["name"] for g in gyms if t in g["tags"]})
+        if len(names) == 1:
+            out.append(f"- 「{lbl}」を打ち出すのは{names[0]}だけで、選択肢はまだ少なめです。")
+    gaps = sanitize_gaps(st["gaps"])
+    if gaps:
+        out.append(f"- {gaps}")
     out.append("")
 
     out.append("### 出店するならここを見る")

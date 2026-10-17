@@ -1,0 +1,799 @@
+{
+ "ningyocho": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 東日本橋店",
+   "address": "東京都中央区日本橋小伝馬町14-10 宮本ビル3階",
+   "access": "最寄りは馬喰横山駅（直線距離 約190m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは馬喰横山駅 約190m",
+   "hours": "平日 9:00〜22:00 / 土日祝 10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "toyosu-tsukishima-kachidoki": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 勝どき店",
+   "address": "東京都中央区勝どき4-4-9 ISビル3階",
+   "access": "最寄りは勝どき駅（直線距離 約80m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは勝どき駅 約80m",
+   "hours": "平日9:00〜22:00 / 土日祝 9:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "higashinakano-ochiai": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 中井駅前店",
+   "address": "東京都新宿区中落合1-18-4 中井ビル2階",
+   "access": "最寄りは中井駅（直線距離 約90m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは中井駅 約90m",
+   "hours": "平日10:00〜22:00 / 土日祝12:00〜20:00",
+   "extra_tags": []
+  }
+ ],
+ "korakuen-kasuga-hongo": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 水道橋店",
+   "address": "東京都文京区本郷1-25-2 TRUST VALUE本郷2階",
+   "access": "最寄りは本郷三丁目駅（直線距離 約360m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは本郷三丁目駅 約360m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "ueno-okachimachi-uguisudani": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 新御徒町店",
+   "address": "東京都台東区東上野1-2-13 カーニープレイス新御徒町202",
+   "access": "最寄りは新御徒町駅（直線距離 約60m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは新御徒町駅 約60m",
+   "hours": "平日 9:00〜22:00 / 土日祝 10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 上野・入谷店",
+   "address": "東京都台東区下谷2ー19ー9 営業時間",
+   "access": "東京メトロ日比谷線入谷駅4番出口徒歩3分",
+   "short_access": "入谷駅 徒歩3分",
+   "hours": "9:00〜22:00(最終受付21:00)",
+   "extra_tags": []
+  },
+  {
+   "chain": "dietpartner",
+   "store": "ダイエットパートナー 入谷・鶯谷店",
+   "address": "東京都台東区北上野2丁目30−5 大黒ビル",
+   "access": "入谷駅 徒歩1分",
+   "short_access": "入谷駅 徒歩1分",
+   "hours": "8:00〜23:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "dietpartner",
+   "store": "ダイエットパートナー 湯島・上野店",
+   "address": "東京都文京区湯島3丁目28−18 AD・HOMES303",
+   "access": "湯島駅 徒歩4分",
+   "short_access": "湯島駅 徒歩4分",
+   "hours": "8:00〜23:00",
+   "extra_tags": []
+  }
+ ],
+ "asakusa-oshiage": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 東京スカイツリー前店",
+   "address": "東京都墨田区向島3-31-8 レイコービル201",
+   "access": "最寄りはとうきょうスカイツリー駅（直線距離 約270m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りはとうきょうスカイツリー駅 約270m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "kinshicho": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 両国店",
+   "address": "東京都墨田区亀沢4-16-7 鈴木ビル203",
+   "access": "最寄りは錦糸町駅（直線距離 約660m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは錦糸町駅 約660m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 錦糸町店",
+   "address": "東京都墨田区太平2丁目5-4サンライズビル4F 営業時間",
+   "access": "JR東日本錦糸町駅北口徒歩5分",
+   "short_access": "JR東日本錦糸町駅 徒歩5分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "monzennakacho-kiba": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 木場店",
+   "address": "東京都江東区木場2-21-2 加島ビル地下1階",
+   "access": "最寄りは木場駅（直線距離 約220m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは木場駅 約220m",
+   "hours": "平日10:00〜22:00 / 土日祝12:00〜20:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 門前仲町店",
+   "address": "東京都江東区牡丹1丁目2−2 Y・Sビル",
+   "access": "東京メトロ東西線・都営大江戸線門前仲町駅4番出口徒歩4分",
+   "short_access": "門前仲町駅 徒歩4分",
+   "hours": "7:00〜23:00 (最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "fudomae-togoshi": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 戸越公園店",
+   "address": "東京都品川区戸越5-18-6 セレニティ戸越201号室",
+   "access": "最寄りは戸越公園駅（直線距離 約50m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは戸越公園駅 約50m",
+   "hours": "平日 10:00〜22:00 / 土日祝 10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 五反田店",
+   "address": "東京都品川区西五反田5-4-6 セブンスターマンション104",
+   "access": "JR山手線五反田駅徒歩6分 東急目黒線 不動前駅 徒歩6分 東急池上線 大崎広小路駅 徒歩7分",
+   "short_access": "五反田駅 徒歩6分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "gakugeidaigaku": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 五本木店",
+   "address": "東京都目黒区五本木2-52-14 山本ビル2階",
+   "access": "最寄りは学芸大学駅（直線距離 約540m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは学芸大学駅 約540m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 学芸大学店",
+   "address": "東京都目黒区鷹番2-8-22 プラザ学芸大学EAST",
+   "access": "東急東横線学芸大学駅東口から徒歩3分",
+   "short_access": "学芸大学駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "umegaoka-shindaita": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 梅ヶ丘店",
+   "address": "東京都世田谷区梅丘1-34-4 梅丘エミネント202号室",
+   "access": "最寄りは梅ヶ丘駅（直線距離 約110m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは梅ヶ丘駅 約110m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "yoyogi": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 千駄ヶ谷店",
+   "address": "東京都渋谷区千駄ヶ谷1-28-8 ニュー千駄ヶ谷マンション地下005",
+   "access": "最寄りは千駄ケ谷駅（直線距離 約260m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは千駄ケ谷駅 約260m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 代々木店",
+   "address": "東京都渋谷区代々木1-32-9 吉川代々木ビル3階",
+   "access": "JR・都営大江戸線代々木駅西口から徒歩1分",
+   "short_access": "代々木駅 徒歩1分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "ebisu": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM prime恵比寿広尾店",
+   "address": "東京都渋谷区恵比寿2-6-26 クロスサードビル TQ恵比寿B1階",
+   "access": "最寄りは恵比寿駅（直線距離 約640m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは恵比寿駅 約640m",
+   "hours": "平日9:00〜22:00 / 土日祝9:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 恵比寿店",
+   "address": "東京都渋谷区恵比寿西1-30-1 シーズ代官山",
+   "access": "JR山手線恵比寿駅JR西口改札から徒歩5分",
+   "short_access": "恵比寿駅 徒歩5分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "nakano": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 中野店",
+   "address": "東京都中野区新井1-34-16 アネックス新井201",
+   "access": "最寄りは新井薬師前駅（直線距離 約510m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは新井薬師前駅 約510m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 中野店",
+   "address": "東京都中野区中野二丁目13番21号 パール美里",
+   "access": "JR中央線・総武線 中野駅 南口より徒歩約5分/東京メトロ東西線 中野駅 南口より徒歩約5分",
+   "short_access": "中野駅 徒歩約5分",
+   "hours": "7:00〜23:00 (最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "jujo-oji": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 十条店",
+   "address": "東京都北区上十条1-4-17 ザ・パークハウス103",
+   "access": "最寄りは十条駅（直線距離 約280m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは十条駅 約280m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "nippori-nishinippori": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 日暮里店",
+   "address": "東京都荒川区東日暮里5-32-7 リーフハイツ日暮里104",
+   "access": "最寄りは日暮里駅（直線距離 約410m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは日暮里駅 約410m",
+   "hours": "平日09:00〜22:00 / 土日祝09:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "narimasu": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 成増店",
+   "address": "東京都板橋区赤塚3-15-6 内田ビル2階",
+   "access": "最寄りは成増駅（直線距離 約470m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは成増駅 約470m",
+   "hours": "平日10:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "nerima": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 練馬店",
+   "address": "東京都練馬区豊玉北5-7-15 Ysビル3階",
+   "access": "最寄りは練馬駅（直線距離 約360m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは練馬駅 約360m",
+   "hours": "平日10:00〜22:00 / 土日祝12:00〜20:00",
+   "extra_tags": []
+  }
+ ],
+ "kitasenju": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 北千住店",
+   "address": "東京都足立区千住旭町22-4 2階",
+   "access": "最寄りは牛田駅（直線距離 約360m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは牛田駅 約360m",
+   "hours": "平日9:00〜22:00 / 土日祝10:00〜18:00",
+   "extra_tags": []
+  }
+ ],
+ "ikebukuro": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 池袋東口店",
+   "address": "東京都豊島区南池袋3-18-44 プレイスリボン102",
+   "access": "最寄りは都電雑司ヶ谷駅（直線距離 約170m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは都電雑司ヶ谷駅 約170m",
+   "hours": "平日10:00〜22:00 / 土日祝 10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 池袋ANNEX店",
+   "address": "東京都豊島区西池袋1-22-2 ナカヤビル5階",
+   "access": "池袋駅西口徒歩1分",
+   "short_access": "池袋駅 徒歩1分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 池袋店",
+   "address": "東京都豊島区東池袋1-40-10 東池Kビル2F",
+   "access": "JR山手線/埼京線/湘南新宿ライン池袋駅東口22番出口から徒歩3分",
+   "short_access": "湘南新宿ライン池袋駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "otsuka": [
+  {
+   "chain": "goodlife",
+   "store": "GOODLIFE GYM 大塚店",
+   "address": "東京都豊島区東池袋2-7-9 ハイプラザ東池袋101",
+   "access": "最寄りは向原駅（直線距離 約170m・公式に記載がないため当サイトが地図から算出）",
+   "short_access": "最寄りは向原駅 約170m",
+   "hours": "平日10:00〜22:00 / 土祝 10:00〜18:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 大塚・新大塚店",
+   "address": "東京都豊島区南大塚3-1-2 Terrace",
+   "access": "東京メトロ丸ノ内線 新大塚駅1番出口徒歩1分",
+   "short_access": "新大塚駅 徒歩1分",
+   "hours": "9:00〜22:00 (最終受付は21:00)",
+   "extra_tags": []
+  }
+ ],
+ "azabujuban-shirokanetakanawa": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 麻布十番店",
+   "address": "東京都港区麻布十番3-7-5 decimo",
+   "access": "東京メトロ南北線麻布十番駅1番出口から徒歩3分",
+   "short_access": "麻布十番駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 麻布十番ANNEX店",
+   "address": "東京都港区麻布十番3丁目2−7 リゾーム麻布十番",
+   "access": "東京メトロ南北線・都営大江戸線麻布十番駅 1番出口徒歩3分",
+   "short_access": "麻布十番駅 徒歩3分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 麻布十番店",
+   "address": "東京都港区南麻布2丁目8-21 SNUG",
+   "access": "東京メトロ南北線・都営大江戸線麻布十番駅1番出口徒歩8分",
+   "short_access": "麻布十番駅 徒歩8分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 東麻布店",
+   "address": "東京都港区東麻布2-27-6 財成麻布ビル",
+   "access": "東京メトロ南北線・都営大江戸線麻布十番駅6番出口徒歩5分",
+   "short_access": "麻布十番駅 徒歩5分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "futakotamagawa": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 二子玉川店",
+   "address": "東京都世田谷区玉川3-19-3 玉川HOUEIビル2階",
+   "access": "東急東横線二子玉川駅西口から徒歩4分",
+   "short_access": "二子玉川駅 徒歩4分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "ginza": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 銀座ANNEX店",
+   "address": "東京都中央区銀座7丁目5-5 長谷第1ビル",
+   "access": "東京メトロ銀座線・丸の内線銀座駅B3出口から徒歩5分",
+   "short_access": "銀座駅 徒歩5分",
+   "hours": "7:00〜22:00",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 銀座店",
+   "address": "東京都中央区銀座6-9-6 菊水ビル8階A室",
+   "access": "東京メトロ銀座線・丸の内線銀座駅A2出口から徒歩2分",
+   "short_access": "銀座駅 徒歩2分",
+   "hours": "7:00〜22:00",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "jiyugaoka": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 自由が丘店",
+   "address": "東京都世田谷区奥沢5-31-2 自由が丘カントリー倶楽部",
+   "access": "東急東横線自由ヶ丘駅南口から徒歩3分",
+   "short_access": "自由ヶ丘駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 奥沢店",
+   "address": "東京都世田谷区奥沢3-35-9 エスペランサ奥沢",
+   "access": "東急目黒線奥沢駅から徒歩1分",
+   "short_access": "奥沢駅 徒歩1分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "iidabashi-kagurazaka": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 神楽坂・飯田橋店",
+   "address": "東京都新宿区神楽坂3-2-9 八洋神楽坂ビル",
+   "access": "東京メトロ東西線神楽坂駅1a出口から徒歩4分",
+   "short_access": "神楽坂駅 徒歩4分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 飯田橋店",
+   "address": "東京都文京区後楽2-1-8 後楽ビル3F",
+   "access": "飯田橋駅(JR総武線・東京メトロ各線)徒歩3分/後楽園駅(東京メトロ丸ノ内線・南北線)徒歩5分/春日駅(都営三田線・大江戸線)徒歩7分",
+   "short_access": "飯田橋駅 徒歩3分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "kichijoji": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 吉祥寺ANNEX店",
+   "address": "東京都武蔵野市御殿山1-3-9 御殿山フラット2F",
+   "access": "吉祥寺駅徒歩5分",
+   "short_access": "吉祥寺駅 徒歩5分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 吉祥寺店",
+   "address": "東京都武蔵野市御殿山1丁目5−5 N's吉祥寺",
+   "access": "JR中央線吉祥寺駅南改札(公園口)から徒歩5分",
+   "short_access": "吉祥寺駅 徒歩5分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 吉祥寺店",
+   "address": "東京都武蔵野市吉祥寺本町2丁目25-12 Santa",
+   "access": "JR中央線/JR総武線/吉祥寺駅北口徒歩4分",
+   "short_access": "吉祥寺駅 徒歩4分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "meguro": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 目黒店",
+   "address": "東京都品川区上大崎2丁目10−32 フラワープラザビル",
+   "access": "JR山手線目黒駅東口から徒歩3分",
+   "short_access": "目黒駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "takadanobaba-mejiro": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 目白店",
+   "address": "東京都豊島区目白3-17-23 AVIWSビル4F",
+   "access": "JR山手線目白駅から徒歩5分",
+   "short_access": "目白駅 徒歩5分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 高田馬場店",
+   "address": "東京都豊島区高田3-15-7 第一大島ビル308",
+   "access": "JR山手線・東京メトロ東西線高田馬場駅 早稲田口より徒歩3分",
+   "short_access": "高田馬場駅 徒歩3分",
+   "hours": "9:00〜22:00 (最終受付は21:00)",
+   "extra_tags": []
+  }
+ ],
+ "nakameguro": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 中目黒ANNEX店",
+   "address": "東京都目黒区上目黒1-17-8 中目黒K.R.Kビル",
+   "access": "中目黒駅徒歩2分",
+   "short_access": "中目黒駅 徒歩2分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 中目黒店",
+   "address": "東京都目黒区上目黒3-2-2 羊屋ビル3F",
+   "access": "東急東横線中目黒駅西口1から徒歩1分",
+   "short_access": "中目黒駅 徒歩1分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "roppongi": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 六本木店",
+   "address": "東京都港区六本木6-1-2 富士プラザビル3F",
+   "access": "東京メトロ日比谷線六本木駅3番出口から徒歩1分",
+   "short_access": "六本木駅 徒歩1分",
+   "hours": "7:00〜22:00",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 六本木店",
+   "address": "東京都港区赤坂9丁目2-13 ninetytwo13",
+   "access": "東京メトロ日比谷線・都営大江戸線六本木駅7番出口徒歩6分",
+   "short_access": "六本木駅 徒歩6分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "sangenjaya": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 三軒茶屋ANNEX店",
+   "address": "東京都世田谷区太子堂1-15-12 セントラルビル",
+   "access": "三軒茶屋駅 徒歩5分",
+   "short_access": "三軒茶屋駅 徒歩5分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "shibuya": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 渋谷店",
+   "address": "東京都渋谷区渋谷3丁目26-17 VORT渋谷",
+   "access": "JR渋谷駅新南口から徒歩3分",
+   "short_access": "JR渋谷駅 徒歩3分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  },
+  {
+   "chain": "arisanfit",
+   "store": "ARISANFIT 渋谷店",
+   "address": "東京都渋谷区道玄坂1丁目15-3 プリメーラ道玄坂612号室",
+   "access": "JR渋谷駅 徒歩4分",
+   "short_access": "JR渋谷駅 徒歩4分",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "shimokitazawa": [
+  {
+   "chain": "drtraining",
+   "store": "Dr.トレーニング 下北沢店",
+   "address": "東京都世田谷区北沢2-35-2 第3シンヤシキビル",
+   "access": "小田急小田原線下北沢駅東口から徒歩3分",
+   "short_access": "下北沢駅 徒歩3分",
+   "hours": "9:00〜21:00",
+   "extra_tags": []
+  }
+ ],
+ "akabane": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 赤羽店",
+   "address": "東京都北区赤羽3-3-2 ファーストコート赤羽1F",
+   "access": "JR京浜東北線・根岸線 赤羽駅・徒歩6分",
+   "short_access": "赤羽駅 徒歩6分",
+   "hours": "7:00〜23:00 (最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "akihabara-kanda": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 秋葉原店",
+   "address": "東京都千代田区神田松永町11秋葉原トーセイビルV 6F",
+   "access": "東京メトロ日比谷線/つくばエクスプレス 秋葉原駅 A3出口 徒歩1分 JR山手線/JR総武線/JR京浜東北・根岸線 秋葉原駅 中央北口 徒歩2分",
+   "short_access": "秋葉原駅 徒歩1分",
+   "hours": "7:00〜23:00(最終受付22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "fuchu": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 府中店",
+   "address": "東京都府中市寿町1-6-3 村木ビル203",
+   "access": "京王線府中駅 北口 徒歩3分/京王線府中本町駅 徒歩約9分 /「府中駅」バス停 徒歩3分 駐車場 ビル裏側にコインパーキングあり",
+   "short_access": "府中駅 徒歩3分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "hachioji": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 八王子店",
+   "address": "東京都八王子市横山町 5-13八王子渋谷ビルB1",
+   "access": "JR八王子駅 北口より徒歩6分 京王八王子駅 2番出口より徒歩7分(無料提携駐車場あり)",
+   "short_access": "JR八王子駅 徒歩6分",
+   "hours": "7:00〜23:00(最終受付は22:00, 変更可能性あり)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "itabashi": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 板橋店",
+   "address": "東京都北区滝野川7-2-1 谷端シティハイツ202",
+   "access": "JR埼京線板橋駅東口 徒歩1分",
+   "short_access": "板橋駅 徒歩1分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 西巣鴨店（板橋ANNEX店）",
+   "address": "東京都北区滝野川6丁目27-9 IW.COURT",
+   "access": "都営三田線西巣鴨駅A3出口 徒歩7分",
+   "short_access": "西巣鴨駅 徒歩7分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  },
+  {
+   "chain": "arisanfit",
+   "store": "ARISANFIT 池袋店",
+   "address": "東京都豊島区池袋本町1丁目38−11 カーサコモド1階",
+   "access": "北池袋駅 徒歩30秒",
+   "short_access": "北池袋駅 徒歩30秒",
+   "hours": "9:00〜22:00",
+   "extra_tags": []
+  }
+ ],
+ "kameari-kanamachi": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 金町店",
+   "address": "東京都葛飾区東金町1丁目20-15 市野ビル4F",
+   "access": "金町駅",
+   "short_access": "金町駅",
+   "hours": "7:00〜23:00 (最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "shinkoiwa-koiwa": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 小岩店",
+   "address": "東京都江戸川区南小岩6丁目28−14 杉本ビル5階",
+   "access": "JR総武・中央緩行線 小岩駅南口から徒歩5分",
+   "short_access": "小岩駅 徒歩5分",
+   "hours": "7:00〜23:00 (最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "kokubunji": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 国分寺店",
+   "address": "東京都国分寺市南町3-18-17 第4サイトウビル4階",
+   "access": "JR中央線・西武国分寺線・西武多摩湖線 国分寺駅 南口 徒歩1分/「国分寺駅南口」バス停 徒歩約3分",
+   "short_access": "国分寺駅 徒歩1分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "mitaka": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 三鷹店",
+   "address": "東京都三鷹市上連雀2-1-1 WELINA1F",
+   "access": "JR中央線/JR総武線/三鷹駅南口徒歩3分",
+   "short_access": "三鷹駅 徒歩3分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "tokyo-yurakucho-shinbashi": [
+  {
+   "chain": "tpg",
+   "store": "THE PERSONAL GYM 日本橋・東京駅店",
+   "address": "東京都中央区日本橋3丁目3-17 3F",
+   "access": "JR東京駅八重洲地下中央口(ヤエチカ)21番出口徒歩1分",
+   "short_access": "JR東京駅 徒歩1分",
+   "hours": "7:00〜23:00(最終受付は22:00)",
+   "extra_tags": [
+    "early"
+   ]
+  }
+ ],
+ "oizumigakuen-shakujiikoen": [
+  {
+   "chain": "dietpartner",
+   "store": "ダイエットパートナー 石神井公園・練馬店",
+   "address": "東京都練馬区高野台3丁目7−4 コーポセレサ",
+   "access": "石神井公園駅 徒歩5分",
+   "short_access": "石神井公園駅 徒歩5分",
+   "hours": "8:00〜23:00",
+   "extra_tags": []
+  }
+ ],
+ "sasazuka-hatagaya": [
+  {
+   "chain": "dietpartner",
+   "store": "ダイエットパートナー 初台店",
+   "address": "東京都渋谷区初台1丁目16−4 1F",
+   "access": "初台駅 徒歩5分",
+   "short_access": "初台駅 徒歩5分",
+   "hours": "8:00〜23:00",
+   "extra_tags": []
+  }
+ ]
+}

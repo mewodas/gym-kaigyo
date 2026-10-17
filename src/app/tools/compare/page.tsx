@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "パーソナルジム料金・サービス比較｜主要チェーンの公式料金を一覧で比較",
   description:
-    "RIZAP・BEYOND・かたぎり塾・ASPI・アップルジム・MIYAZAKI GYM・24/7Workout など主要パーソナルジムの公式料金・入会金・強みを一覧で比較。都内の店舗数も掲載しています。",
+    "RIZAP・BEYOND・かたぎり塾・GOODLIFE GYM・ASPI・アップルジム・Dr.トレーニング・THE PERSONAL GYM など主要パーソナルジムの公式料金・入会金・強みを一覧で比較。都内の店舗数も掲載しています。",
   alternates: { canonical: "https://gym-kaigyo.jp/tools/compare" },
 };
 
@@ -51,6 +51,10 @@ const SOURCES: Record<string, string> = {
   johnny: "https://www.johnny-style.com/price.html",
   spacegym: "https://www.space-gym.com/",
   rizap: "https://www.rizap.jp/",
+  goodlife: "https://goodlifegym.jp/",
+  drtraining: "https://drtraining.jp/price/",
+  tpg: "https://the-personal-gym.com/#price",
+  dietpartner: "https://dietpartner.jp/",
 };
 
 export default function ComparePage() {
