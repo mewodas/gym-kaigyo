@@ -118,6 +118,33 @@ export default async function ArticlePage({ params }: Props) {
       {/* Related Articles */}
       <RelatedArticles articles={relatedArticles} />
 
+      {article.category === "area" && (
+        <section style={{
+          border: "4px solid #FF6200",
+          borderRadius: 20,
+          background: "#FEF6EA",
+          margin: "40px auto 0",
+          maxWidth: 800,
+          padding: "32px 28px",
+          textAlign: "center",
+        }} className="mx-6 sm:mx-auto">
+          <h2 style={{ fontWeight: 900, fontSize: 21, color: "#FF6200", marginBottom: 10 }}>
+            地図で競合の数を確かめる
+          </h2>
+          <p style={{ fontSize: 15, color: "#333", lineHeight: 1.7, marginBottom: 14 }}>
+            駅と半径を選ぶと、その範囲にあるパーソナルジムの数・価格帯・空いているポジションが分かります。
+          </p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/tools/area-map" style={{ background: "#FF6200", color: "#fff", borderRadius: 100, padding: "12px 24px", fontWeight: 700, fontSize: 14 }} className="hover:opacity-90">
+              出店エリア診断マップ →
+            </Link>
+            <Link href="/tools/compare" style={{ border: "2px solid #FF6200", color: "#FF6200", borderRadius: 100, padding: "10px 22px", fontWeight: 700, fontSize: 14 }} className="hover:opacity-80">
+              チェーンの料金比較 →
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* AI活用バナー */}
       <section style={{
         border: "4px solid #FF6200",

@@ -106,13 +106,13 @@ export default function Home() {
             marginBottom: 36,
             maxWidth: 580,
           }}>
-            山手線の駅ごとに、パーソナルジムの料金・立地・強みを公式情報から調査。
+            都内の駅ごとに、パーソナルジムの料金・立地・強みを公式情報から調査。地図で競合の数も確かめられます。
             開業を考える経営者には<span style={{ color: "#FF8C42", fontWeight: 700 }}>競合分析</span>を、
             ジムを探している人には目的別の選び方を届けます。
           </p>
 
           <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <Link href="#area" style={{
+            <Link href="/tools/area-map" style={{
               background: "#FF6200",
               color: "#fff",
               borderRadius: 100,
@@ -122,16 +122,16 @@ export default function Home() {
               boxShadow: "0 8px 28px rgba(255,98,0,0.45)",
               display: "inline-block",
             }} className="hover:opacity-90 transition-opacity">
-              駅から調べる →
+              出店エリアを診断する →
             </Link>
-            <Link href="/kaigyo/kanzen-guide" style={{
+            <Link href="#area" style={{
               color: "rgba(255,255,255,0.85)",
               fontSize: 14,
               fontWeight: 600,
               borderBottom: "1px solid rgba(255,255,255,0.4)",
               paddingBottom: 4,
             }} className="hover:text-white hover:border-white transition-colors">
-              開業完全ガイドを読む
+              駅別のジム調査を見る
             </Link>
           </div>
         </div>
@@ -165,6 +165,25 @@ export default function Home() {
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
               山手線全駅と都内の主要駅を調査中。料金・所在地はすべて各ジムの公式サイトで確認しています（2026年10月調査）。
             </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 44 }}>
+            {[
+              { href: "/tools/area-map", title: "出店エリア診断マップ", desc: "駅と半径を選ぶと、競合ジムの数・価格帯・空いているポジションが分かります。近くのジム探しにも。" },
+              { href: "/tools/compare", title: "料金・サービス比較", desc: "主要チェーンの公式料金・入会金・強みと、都内の店舗数を一覧で比較。" },
+            ].map((t) => (
+              <Link key={t.href} href={t.href} style={{
+                background: "linear-gradient(135deg, #FF6200 0%, #FF8C42 100%)",
+                borderRadius: 14,
+                padding: "22px 24px",
+                display: "block",
+                color: "#fff",
+                boxShadow: "0 8px 28px rgba(255,98,0,0.3)",
+              }} className="hover:-translate-y-1 transition-transform">
+                <div style={{ fontWeight: 900, fontSize: 19, marginBottom: 6 }}>{t.title} →</div>
+                <p style={{ fontSize: 13, lineHeight: 1.7, opacity: 0.95 }}>{t.desc}</p>
+              </Link>
+            ))}
           </div>
 
           {AREA_GROUPS.map((group) => {
