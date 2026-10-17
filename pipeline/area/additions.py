@@ -62,6 +62,22 @@ RIZAP = {
 }
 
 
+EVI_H = "7:30〜22:00（年中無休）"
+SMALL = {
+    "nakano": [g("waple", "WAPLE 中野店", "東京都中野区中野5-24-20 ニュー中野マンション303", "JR中野駅北口 徒歩9分", "中野駅 徒歩9分", "9:00〜23:00（定休日なし）")],
+    "narimasu": [g("waple", "WAPLE 成増店", "東京都板橋区成増3-1-6 水谷ビル1階", "東武東上線 成増駅北口 徒歩3分", "成増駅 徒歩3分", "9:00〜23:00（不定休）")],
+    "tabata": [g("waple", "WAPLE 田端店", "東京都荒川区西尾久1-21-14 山崎ビル", "JR田端駅 徒歩12分", "田端駅 徒歩12分", "9:00〜23:00（定休日なし）")],
+    "ebisu": [g("evigym", "eviGym 恵比寿店", "東京都渋谷区恵比寿南2-3-1 パイザ恵比寿ビル702", "恵比寿駅 徒歩3分", "恵比寿駅 徒歩3分", EVI_H, extra_tags=["early"]),
+              g("reset", "RESET 恵比寿", "東京都渋谷区恵比寿4-7-2 KBKビル3F", "恵比寿駅東口 徒歩2分", "東口 徒歩2分", "9:00〜23:00（無休）")],
+    "shibuya": [g("evigym", "eviGym 渋谷店", "東京都渋谷区渋谷3-18-4 渋谷三丁目ビル6階", "渋谷駅 徒歩3分", "渋谷駅 徒歩3分", "8:00〜22:00（年中無休）")],
+    "shinjuku": [g("evigym", "eviGym 新宿店", "東京都新宿区新宿3-30-13 新宿マルイ本館7F", "新宿三丁目駅直結、新宿駅 徒歩5分", "新宿駅 徒歩5分", "10:30〜22:00")],
+    "harajuku": [g("evigym", "eviGym 表参道店", "東京都港区南青山5-4-51 シャトー青山第一204号室", "表参道駅 徒歩2分", "表参道駅 徒歩2分", EVI_H, extra_tags=["early"])],
+    "roppongi": [g("evigym", "eviGym 六本木店", "東京都港区赤坂9-6-19 A-Ninth", "六本木駅A8出口 徒歩4分", "六本木駅 徒歩4分", EVI_H, extra_tags=["early"])],
+    "ginza": [g("evigym", "eviGym 銀座店", "東京都中央区銀座4-10-6 G4ビル", "東銀座駅 徒歩1分、銀座駅 徒歩4〜5分", "東銀座駅 徒歩1分", EVI_H, extra_tags=["early"]),
+              g("evigym", "eviGym 銀座3rd店", "東京都中央区銀座3-12-7 原町ビル5階", "東銀座駅 徒歩1分、銀座駅 徒歩4分", "東銀座駅 徒歩1分", EVI_H, extra_tags=["early"])],
+}
+
+
 def _auto():
     """assign_new.py が作った自動振り分け（GOODLIFE GYM・Dr.トレーニング・THE PERSONAL GYM など）。"""
     import json
@@ -73,5 +89,5 @@ def _auto():
 def apply(stations):
     auto = _auto()
     for st in stations:
-        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], []) + auto.get(st["slug"], [])
+        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], []) + auto.get(st["slug"], []) + SMALL.get(st["slug"], [])
     return stations
