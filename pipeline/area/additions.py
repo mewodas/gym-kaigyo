@@ -103,7 +103,7 @@ def _indies(stations):
     cache = json.load(open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
     st_xy = {}
     for s in json.load(open(os.path.join(here, "research", "stations_tokyo.json"), encoding="utf-8")):
-        st_xy.setdefault(s["name"], (s["lat"], s["lng"]))
+        st_xy.setdefault(s["name"].replace("ヶ", "ケ"), (s["lat"], s["lng"]))
 
     def dist(a, b, c, d):
         p1, p2 = math.radians(a), math.radians(c)
@@ -117,6 +117,7 @@ def _indies(stations):
         best = None
         for st in stations:
             for n in re.split("・", st["short"]) + st.get("stations", []):
+                n = n.replace("ヶ", "ケ")
                 if n in st_xy:
                     d = dist(lat, lng, *st_xy[n])
                     if d <= 1000 and (best is None or d < best[1]):
