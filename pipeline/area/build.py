@@ -11,6 +11,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from chains import CHAINS, CHECKED  # noqa: E402
 from stations import RIDERSHIP, STATIONS  # noqa: E402
 from stations_major import MAJOR  # noqa: E402
+from stations_wave3 import WAVE3  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "content", "area")
 DATE = "2026-10-17"
@@ -263,7 +264,7 @@ def build(st):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    for st in STATIONS + MAJOR:
+    for st in STATIONS + MAJOR + WAVE3:
         path = os.path.join(OUT_DIR, f"{st['slug']}.mdx")
         with open(path, "w", encoding="utf-8") as f:
             f.write(build(st))
