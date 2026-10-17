@@ -4,6 +4,7 @@ from stations_major import g, MIYA_H, RW_H
 from stations_wave3 import BY_H, kh
 
 SPACE_H = "9:00〜23:00（年中無休）"
+RZ_H = "7:00〜23:00"
 
 ADDITIONS = {
     "tokyo-yurakucho-shinbashi": [
@@ -41,8 +42,27 @@ ADDITIONS = {
     ],
 }
 
+RIZAP = {
+    "ginza": [g("rizap", "RIZAP 銀座店", "東京都中央区銀座2-11-8 ラウンドクロス銀座2丁目5F", "東銀座駅A2出口 徒歩7分、銀座一丁目駅11番出口 徒歩10分", "東銀座駅 徒歩7分", RZ_H),
+              g("rizap", "RIZAP 銀座（女性専用）店", "東京都中央区銀座6-13-6 ヒューリック銀座ウォールビル2階", "銀座駅 徒歩5分、東銀座駅 徒歩4分", "銀座駅 徒歩5分", RZ_H, extra_tags=["women"], note="女性専用店です。")],
+    "shinagawa-takanawagateway": [g("rizap", "RIZAP 品川店", "東京都港区高輪3-25-22 高輪カネオビル8階", "JR品川駅高輪口 徒歩約3分", "品川駅 徒歩3分", RZ_H)],
+    "shinjuku": [g("rizap", "RIZAP 新宿店", "東京都新宿区西新宿7-16-11 FORECAST西新宿3F・4F", "新宿西口駅D5出口 徒歩4分、JR新宿駅B16出口 徒歩6分", "新宿駅 徒歩6分", RZ_H)],
+    "ueno-okachimachi-uguisudani": [g("rizap", "RIZAP 上野店", "東京都台東区上野2-12-20 NDKロータスビルB1F", "JR上野駅不忍口 徒歩5分", "上野駅 徒歩5分", RZ_H)],
+    "kinshicho": [g("rizap", "RIZAP 錦糸町店", "東京都墨田区江東橋3-9-10 丸井錦糸町店6F", "JR錦糸町駅南口 徒歩2分", "南口 徒歩2分", "10:00〜22:00")],
+    "jiyugaoka": [g("rizap", "RIZAP 自由が丘店", "東京都目黒区自由が丘1-14-14 自由ヶ丘アルネックビル3・4F", "自由が丘駅北口 徒歩5分", "自由が丘駅 徒歩5分", RZ_H)],
+    "shimokitazawa": [g("rizap", "RIZAP 下北沢店", "東京都世田谷区北沢2-6-10 仙田ビル1・2F", "下北沢駅 徒歩2分", "下北沢駅 徒歩2分", RZ_H)],
+    "futakotamagawa": [g("rizap", "RIZAP 二子玉川店", "東京都世田谷区玉川2-24-1 キュープラザ二子玉川B1F", "二子玉川駅 徒歩1分", "二子玉川駅 徒歩1分", RZ_H)],
+    "ebisu": [g("rizap", "RIZAP 恵比寿店", "東京都渋谷区恵比寿南2-3-14 キュープラザ恵比寿南4F", "JR恵比寿駅西口 徒歩3分", "西口 徒歩3分", RZ_H)],
+    "ikebukuro": [g("rizap", "RIZAP 池袋西口店", "東京都豊島区池袋2-40-13 デュープレックスビズ3F", "池袋駅西口C6出口 徒歩5分", "西口 徒歩5分", RZ_H)],
+    "kitasenju": [g("rizap", "RIZAP 北千住店", "東京都足立区千住仲町19-6 和光ビル2F", "東京メトロ千代田線 北千住駅1番出口 徒歩5分", "北千住駅 徒歩5分", RZ_H)],
+    "tachikawa": [g("rizap", "RIZAP 立川店", "東京都立川市曙町1-13-11 立川クレストビル7F", "JR立川駅北口 徒歩6分", "北口 徒歩6分", RZ_H)],
+    "kichijoji": [g("rizap", "RIZAP 吉祥寺店", "東京都武蔵野市吉祥寺本町2-15-4 ミュプレ吉祥寺2F", "吉祥寺駅北口 徒歩6分", "北口 徒歩6分", RZ_H)],
+    "machida": [g("rizap", "RIZAP 町田店", "東京都町田市原町田4-5-8 MIキューブ町田イースト3F", "JR町田駅北口・小田急線町田駅東口 徒歩5分", "町田駅 徒歩5分", RZ_H)],
+    "seisekisakuragaoka-tamacenter": [g("rizap", "RIZAP 聖蹟桜ヶ丘店", "東京都多摩市関戸2-39-12 桜ヶ丘NKビル2F", "京王線 聖蹟桜ヶ丘駅東口 徒歩3分", "聖蹟桜ヶ丘駅 徒歩3分", RZ_H)],
+}
+
 
 def apply(stations):
     for st in stations:
-        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], [])
+        st["gyms"] = st["gyms"] + ADDITIONS.get(st["slug"], []) + RIZAP.get(st["slug"], [])
     return stations
