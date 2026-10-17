@@ -153,6 +153,16 @@ def main():
         gyms.append({"name": nm, "chain": r["chain"], "address": clean_addr(r["address"]),
                      "access": access_of(r) or "最寄駅は公式サイトで確認", "hours": "", "tags": sorted(CHAINS[r["chain"]]["tags"]), "articles": []})
 
+    # 2c. 第3弾の中小チェーン（記事に載らない店も地図には載せる）
+    from chain3 import STORES3
+    for chain, store, address, access, short, hours in STORES3:
+        k = addr_key(address) + chain
+        if k in seen:
+            continue
+        seen[k] = len(gyms)
+        gyms.append({"name": store, "chain": chain, "address": address, "access": access, "hours": hours,
+                     "tags": sorted(CHAINS[chain]["tags"]), "articles": []})
+
     # 3. 座標
     for i, gm in enumerate(gyms):
         lat, lng = geocode(gm["address"], cache)

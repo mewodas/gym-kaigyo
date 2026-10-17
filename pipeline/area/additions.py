@@ -125,6 +125,10 @@ def _indies(stations):
         if best:
             out.setdefault(best[0], []).append({"chain": "ind_" + g["key"], "store": g["name"], "address": g["address"],
                                                 "access": g["access"], "short_access": g["short"], "hours": g["hours"]})
+    from chain3 import place
+    for slug, gs in place(stations, geocode, cache, st_xy, dist).items():
+        have = {g["address"] for st in stations if st["slug"] == slug for g in st["gyms"]}
+        out.setdefault(slug, []).extend(g for g in gs if g["address"] not in have)
     json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
     return out
 

@@ -807,3 +807,9 @@ def _register_indies():
 
 
 _register_indies()
+
+
+# 第3弾の中小チェーン（pipeline/area/chain3.py）
+from chain3 import CHAINS3  # noqa: E402
+
+CHAINS.update(CHAINS3)

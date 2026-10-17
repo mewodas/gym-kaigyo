@@ -5,6 +5,7 @@
 """
 
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -70,9 +71,29 @@ def sanitize_gaps(text):
     return "。".join(keep) + ("。" if keep else "")
 
 
+def sanitize_market(text, n):
+    """手書きの商圏説明の「今回確認できたのは〇店」を、実際の掲載数に合わせる。
+
+    書いた時点から店舗が増えていたら、店舗数にもとづく補足（「いずれも駅から徒歩〇分以内」など）は外す。
+    """
+    m = re.search(r"確認できたのは((?:\d+駅(?:周辺)?で)?)(\d+)店([^。]*)。", text)
+    if not m or int(m.group(2)) == n:
+        return text
+    head = text[: m.start()] + f"確認できたのは{m.group(1)}{n}店でした。"
+    rest = [x for x in text[m.end():].split("。") if x.strip() and not x.strip().startswith("いずれも")]
+    return head + "".join(x + "。" for x in rest)
+
+
 def resolve(g):
     c = CHAINS[g["chain"]]
     tags = list(c["tags"]) + g.get("extra_tags", [])
+    # 営業時間や料金の書き方から読み取れるタグを補う（付け忘れで「〇〇は無い」と誤って書かないため）
+    if re.search(r"(?<![0-9:])0?[4-7]:[0-5]\d\s*[〜~～\-]", g.get("hours") or ""):
+        tags.append("early")
+    if c.get("independent") and any(re.search(r"(?<![0-9])(15|20|25|30)分", ln) and "体験" not in ln and "カウンセリング" not in ln
+                                    for ln in c.get("price_md", "").splitlines()):
+        tags.append("short")
+    tags = list(dict.fromkeys(tags))
     return {**c, **g, "tags": tags}
 
 
@@ -203,7 +224,7 @@ def build(st):
         out.append(f"- JR{s}駅の1日平均乗車人員は**{num:,}人**（山手線30駅中{rank}位）")
     if hit:
         out.append("- 出典：JR東日本「各駅の乗車人員 2024年度」")
-    out.append(f"- {st['market']}")
+    out.append(f"- {sanitize_market(st['market'], len(st['gyms']))}")
     out.append("")
 
     out.append("### 価格帯の分布")
